@@ -29,40 +29,64 @@
 
     <main class="contact">
       <div class="container">
-        <h1>Contáctanos</h1>
-
-        <div class="contact-content">
-          <!-- info -->
-          <div class="contact-info">
-            <p><strong>Email:</strong> example@gmail.com</p>
-            <p><strong>WhatsApp:</strong> 999 999 999</p>
+        <section class="contact-card">
+          <div class="contact-header">
+            <h1>Contáctanos</h1>
+            <p>
+              Estamos aquí para ayudarte a llenar tu hogar de vida. Escríbenos y
+              te responderemos lo antes posible.
+            </p>
           </div>
 
-          <!-- formulario -->
-          <form class="contact-form">
-            <label>Tu Nombre</label>
-            <input type="text" required />
+          <div class="contact-grid">
+            <div class="contact-sidebar">
+              <div class="info-item">
+                <span>Email</span>
+                <a href="mailto:example@gmail.com">example@gmail.com</a>
+              </div>
+              <div class="info-item">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/51999999999">999 999 999</a>
+              </div>
+              <div class="info-item">
+                <span>Ubicación</span>
+                <p>Usa, Texas</p>
+              </div>
+            </div>
 
-            <label>Tu Email</label>
-            <input type="email" required />
+            <form class="contact-form">
+              <div class="form-group">
+                <label>Tu Nombre</label>
+                <input type="text" placeholder="Ej. Luis Arnao" required />
+              </div>
 
-            <label>Tu Mensaje</label>
-            <textarea rows="4" required></textarea>
+              <div class="form-group">
+                <label>Tu Email</label>
+                <input type="email" placeholder="Luis@ejemplo.com" required />
+              </div>
 
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
+              <div class="form-group">
+                <label>Tu Mensaje</label>
+                <textarea
+                  rows="4"
+                  placeholder="¿En qué podemos ayudarte?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+          </div>
+        </section>
       </div>
     </main>
 
-<footer class="site-footer">
+    <footer class="site-footer">
+      <div class="footer-wave"></div>
 
-  <div class="footer-wave"></div>
-
-  <div class="container">
-    <p>© 2026 Trailing Dreams – Plants and Things</p>
-  </div>
-
-</footer>
+      <div class="container">
+        <p>© 2026 Trailing Dreams – Plants and Things</p>
+      </div>
+    </footer>
   </body>
 </html>
