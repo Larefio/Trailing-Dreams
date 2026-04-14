@@ -65,9 +65,9 @@ El proyecto consiste en un e-commerce desarrollado con **HTML y CSS**, con una a
 ---
 
 ## 🌐 Deploy
-👉 https://github.com/Larefio/Market-Plant
+👉 https://larefio.github.io/Trailing-Dreams/
 
 ---
 
 ## 💻 GitHub
-👉 https://github.com/tuusuario/trailing-dreams
+👉 https://github.com/Larefio/Trailing-Dreams
