@@ -230,11 +230,11 @@ function showToast(message) {
   toast.style.position = "fixed";
   toast.style.bottom = "30px";
   toast.style.right = "30px";
-  toast.style.backgroundColor = "#2f5233";
+  toast.style.backgroundColor = "#386b49";
   toast.style.color = "#ffffff";
   toast.style.padding = "16px 28px";
   toast.style.borderRadius = "14px";
-  toast.style.boxShadow = "0 10px 30px rgba(47, 82, 51, 0.15)";
+  toast.style.boxShadow = "0 10px 30px rgba(56, 107, 73, 0.15)";
   toast.style.fontFamily = '"Montserrat", sans-serif';
   toast.style.fontSize = "14px";
   toast.style.fontWeight = "700";
@@ -565,4 +565,17 @@ if (cartContainerLayout) {
       showToast("Proceeding to checkout...");
     });
   }
+}
+
+const careCards = document.querySelectorAll(".care-card-item");
+if (careCards.length > 0) {
+  careCards.forEach((card) => {
+    const trigger = card.querySelector(".care-summary-trigger");
+    if (trigger) {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        card.classList.toggle("active");
+      });
+    }
+  });
 }
