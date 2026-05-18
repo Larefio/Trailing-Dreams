@@ -1,66 +1,149 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Product details. Learn measurements, specs and care detailed directions." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Market Plant</title>
-    <link rel="stylesheet" href="./Css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+    <title>Product Details – Trailing Dreams</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html">
-          <img src="img/logo.svg" alt="logo market" class="logo" />
+          <img src="img/logo.svg" alt="Trailing Dreams Logo" class="logo" />
         </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </label>
+
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
-          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="care.html">Care Guide</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="product-detail">
+    <main class="shop-page">
       <div class="container">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="img/Darlingtonia.jpg" alt="Darlingtonia californica" />
+        <div class="product-detail-container">
+          
+          <div class="gallery-container">
+            <div class="main-image-container">
+              <img id="main-product-img" src="img/Darlingtonia.jpg" alt="Plant main view" />
+            </div>
+            <div class="thumbnails-container">
+              <img class="thumb-img active" src="img/Darlingtonia.jpg" alt="Perspective view 1" />
+              <img class="thumb-img" src="img/Darlingtonia.jpg" alt="Perspective view 2" style="filter: hue-rotate(45deg);" />
+              <img class="thumb-img" src="img/Darlingtonia.jpg" alt="Perspective view 3" style="filter: hue-rotate(90deg);" />
+            </div>
           </div>
 
-          <div class="product-info">
-            <h1>Darlingtonia californica</h1>
-            <p class="price">$100</p>
+          <div class="info-container">
+            <h1 id="product-title">Plant Name</h1>
+            <p id="product-price" class="product-detail-price">$0</p>
+            
+            <div class="product-description-block">
+              <h3>Description</h3>
+              <p id="product-desc">
+                Loading product description...
+              </p>
+            </div>
 
-            <p class="description">
-              La Darlingtonia californica, conocida como Planta Cobra, es una
-              planta carnívora única originaria del norte de California. Se
-              caracteriza por sus hojas en forma de tubo que atraen y capturan
-              insectos. Es ideal para coleccionistas y amantes de plantas
-              exóticas.
-            </p>
+            <div class="product-specs-grid">
+              <div class="spec-item">
+                <span>Height</span>
+                <p id="product-height">Loading...</p>
+              </div>
+              <div class="spec-item">
+                <span>Pot Size</span>
+                <p id="product-pot">Loading...</p>
+              </div>
+              <div class="spec-item">
+                <span>Light</span>
+                <p id="product-light">Loading...</p>
+              </div>
+              <div class="spec-item">
+                <span>Watering</span>
+                <p id="product-water">Loading...</p>
+              </div>
+            </div>
 
-            <a
-              href="https://wa.me/51999999999?text=Hola quiero comprar Darlingtonia californica"
-              class="btn"
-            >
-              Comprar por WhatsApp
-            </a>
+            <div class="quantity-cart-container">
+              <div class="quantity-selector">
+                <button type="button" class="qty-btn" id="qty-minus">—</button>
+                <input type="number" id="product-qty" value="1" min="1" />
+                <button type="button" class="qty-btn" id="qty-plus">+</button>
+              </div>
+              <button id="add-to-cart-btn" class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+            </div>
           </div>
+
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
+      <div class="footer-wave"></div>
       <div class="container">
-        <p>© 2026 CopyRight. Todos los derechos reservados.</p>
+        <div class="footer-grid">
+          <div class="footer-column brand-info">
+            <img src="img/logo.svg" alt="Trailing Dreams Logo" class="footer-logo" />
+            <p>
+              We connect your home with nature. Specialists in unique species,
+              exotic plants, and premium tools for their daily care.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="care.html">Care Guide</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="cart.html">Cart</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="terminos.html#terms">Terms and Conditions</a></li>
+              <li><a href="terminos.html#privacy">Privacy Policy</a></li>
+              <li><a href="terminos.html#shipping">Shipping & Returns</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <span>Email:</span>
+                <a href="mailto:info@trailingdreams.com">info@trailingdreams.com</a>
+              </li>
+              <li>
+                <span>WhatsApp:</span>
+                <a href="https://wa.me/19999999999" target="_blank" rel="noopener noreferrer">+1 999 999 999</a>
+              </li>
+              <li><span>Location:</span> Tyler, TX</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Trailing Dreams – Plants and Things. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

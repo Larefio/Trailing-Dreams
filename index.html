@@ -1,53 +1,121 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Trailing Dreams – Online store for exotic plants and plant care products."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Market Plant</title>
-    <link rel="stylesheet" href="./Css/style.css" />
+    <title>Trailing Dreams – Plants and Things</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html">
-          <img src="img/logo.svg" alt="logo market" class="logo" />
+          <img src="img/logo.svg" alt="Trailing Dreams Logo" class="logo" />
         </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </label>
+
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
-          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="care.html">Care Guide</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <section id="hero" class="hero">
-        <div class="container">
-          <h1>"Plantas que dan vida a tu hogar"</h1>
-          <p>
-            En Trailing Dreams – Plants and Things, nos especializamos en
-            plantas y en todo lo necesario para su cuidado. Ofrecemos una
-            selección de especies y productos que te ayudan a mantenerlas sanas,
-            fuertes y llenas de vida, creando espacios naturales que transmiten
-            calma y bienestar.
-          </p>
-          <a href="shop.html" class="btn btn-primary">Ver Tienda</a>
-        </div>
-      </section>
+
+    <main class="hero">
+      <div class="container">
+        <h1>Welcome to Trailing Dreams</h1>
+        <p>
+          We connect your home with nature. Specialists in unique species,
+          exotic plants, and tools for their daily care.
+        </p>
+        <a href="shop.html" class="btn btn-primary">Explore Shop</a>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-wave"></div>
-
       <div class="container">
-        <p>© 2026 Trailing Dreams – Plants and Things</p>
+        <div class="footer-grid">
+          <div class="footer-column brand-info">
+            <img
+              src="img/logo.svg"
+              alt="Trailing Dreams Logo"
+              class="footer-logo"
+            />
+            <p>
+              We connect your home with nature. Specialists in unique species,
+              exotic plants, and premium tools for their daily care.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="care.html">Care Guide</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="cart.html">Cart</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="terminos.html#terminos">Terms and Conditions</a></li>
+              <li><a href="terminos.html#privacidad">Privacy Policy</a></li>
+              <li><a href="terminos.html#envios">Shipping & Returns</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <span>Email:</span>
+                <a href="mailto:info@trailingdreams.com"
+                  >info@trailingdreams.com</a
+                >
+              </li>
+              <li>
+                <span>WhatsApp:</span>
+                <a
+                  href="https://wa.me/51999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >+51 999 999 999</a
+                >
+              </li>
+              <li><span>Location:</span> Tyler,Tx</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Trailing Dreams – Plants and Things. All rights
+            reserved.
+          </p>
+        </div>
       </div>
     </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

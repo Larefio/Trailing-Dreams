@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Contact — Trailing Dreams. Write to us for plant inquiries, orders, and support."
+      content="Your shopping cart — Trailing Dreams. Review your selected exotic plants and proceed to checkout."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Contact – Trailing Dreams</title>
+    <title>Shopping Cart – Trailing Dreams</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -38,91 +38,79 @@
       </nav>
     </header>
 
-    <main class="contact-page">
+    <main class="shop-page">
       <div class="container">
-        <section class="contact-card">
-          <div class="contact-header">
-            <h1>Contact Us</h1>
-            <p>
-              We are here to help you bring your home to life. Send us a message
-              and we will get back to you as soon as possible.
-            </p>
+        <div class="cart-header">
+          <h1>Your Cart</h1>
+        </div>
+
+        <div class="cart-layout" id="cart-main-layout">
+          <div class="cart-items-wrapper" id="cart-items-list">
+            <article class="cart-item" data-product-id="darlingtonia">
+              <div class="cart-item-image">
+                <img
+                  src="img/Darlingtonia.jpg"
+                  alt="Darlingtonia californica"
+                />
+              </div>
+              <div class="cart-item-details">
+                <h2>Darlingtonia californica</h2>
+                <p class="cart-item-price">$100</p>
+              </div>
+              <div class="cart-item-quantity">
+                <div class="quantity-selector">
+                  <button type="button" class="qty-btn item-minus">—</button>
+                  <input
+                    type="number"
+                    class="item-qty"
+                    value="1"
+                    min="1"
+                    readonly
+                  />
+                  <button type="button" class="qty-btn item-plus">+</button>
+                </div>
+              </div>
+              <div class="cart-item-total">
+                <p class="item-total-price">$100</p>
+              </div>
+              <div class="cart-item-remove">
+                <button
+                  type="button"
+                  class="remove-btn"
+                  aria-label="Remove item"
+                >
+                  &times;
+                </button>
+              </div>
+            </article>
           </div>
 
-          <div class="contact-grid">
-            <aside class="contact-sidebar" aria-label="Contact Information">
-              <div class="info-item">
-                <span>Email</span>
-                <a href="mailto:info@trailingdreams.com"
-                  >info@trailingdreams.com</a
-                >
+          <aside class="cart-summary-sidebar">
+            <div class="summary-card">
+              <h2>Order Summary</h2>
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$100</span>
               </div>
-              <div class="info-item">
-                <span>WhatsApp</span>
-                <a
-                  href="https://wa.me/51999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >+51 999 999 999</a
-                >
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span id="cart-shipping">$10</span>
               </div>
-              <div class="info-item">
-                <span>Location</span>
-                <p>Tyler, Tx</p>
+              <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="cart-total">$110</span>
               </div>
-            </aside>
-
-            <form
-              class="contact-form"
-              action="#"
-              method="POST"
-              aria-label="Contact Form"
-            >
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="e.g. John Doe"
-                  autocomplete="name"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  autocomplete="email"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="How can we help you?"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn-primary btn-submit"
-                aria-label="Send contact message"
-              >
-                Send Message
+              <button id="checkout-btn" class="btn btn-primary btn-checkout">
+                Proceed to Checkout
               </button>
-            </form>
-          </div>
-        </section>
+            </div>
+          </aside>
+        </div>
+
+        <div id="cart-empty-state" class="empty-state" style="display: none">
+          <p>Your cart is currently empty.</p>
+          <a href="shop.html" class="btn btn-primary">Return to Shop</a>
+        </div>
       </div>
     </main>
 
@@ -180,7 +168,7 @@
                   >+51 999 999 999</a
                 >
               </li>
-              <li><span>Location:</span>Tyler, Tx</li>
+              <li><span>Location:</span> Tyler, Tx</li>
             </ul>
           </div>
         </div>
