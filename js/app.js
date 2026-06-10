@@ -61,23 +61,35 @@ if (menuToggle && navLinks) {
 }
 
 function createProductCardHTML(key, plant) {
-  const shortDesc = plant.desc.split('.')[0] + '.';
+  let badgeHTML = '';
+  if (key === 'monstera-borsigiana') badgeHTML = '<span class="product-badge rare">Rare Find</span>';
+  else if (key === 'nepenthes-rajah') badgeHTML = '<span class="product-badge sale">Sale -20%</span>';
+  else if (key === 'alocasia') badgeHTML = '<span class="product-badge new">New Arrival</span>';
+
   return `
     <article class="product" data-category="${plant.category}">
-      <a href="product.html?name=${key}" aria-label="View ${plant.title}">
-        <img src="${plant.img}" alt="${plant.title}" loading="lazy" />
-        <h2>${plant.title}</h2>
-        <p class="desc">${shortDesc}</p>
-      </a>
-      <div class="product-controls">
-        <p class="price">${plant.price}</p>
-        <button type="button" class="shop-add-btn" data-id="${key}" aria-label="Add ${plant.title} to cart">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
+      <div class="product-image-wrapper">
+        ${badgeHTML}
+        <button type="button" class="wishlist-btn" aria-label="Add to wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         </button>
+        <a href="product.html?name=${key}" aria-label="View ${plant.title}">
+          <img src="${plant.img}" alt="${plant.title}" loading="lazy" />
+        </a>
+        <div class="product-overlay">
+          <a href="product.html?name=${key}" class="quick-view-btn" aria-label="Quick View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </a>
+          <button type="button" class="shop-add-btn-premium" data-id="${key}" aria-label="Add ${plant.title} to cart">
+            + Quick Add
+          </button>
+        </div>
+      </div>
+      <div class="product-controls">
+        <a href="product.html?name=${key}">
+          <h2>${plant.title}</h2>
+        </a>
+        <p class="price">${plant.price}</p>
       </div>
     </article>
   `;
@@ -91,7 +103,7 @@ if (shopContainer) {
   const productsGrid = document.getElementById("products-grid");
 
   function bindAddButtons() {
-    const shopAddButtons = document.querySelectorAll(".shop-add-btn");
+    const shopAddButtons = document.querySelectorAll(".shop-add-btn-premium");
     shopAddButtons.forEach((btn) => {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -116,6 +128,20 @@ if (shopContainer) {
 
           saveLocalCart(cart);
           showToast(`${plantData.title} added to cart!`);
+          updateCartIconCount();
+        }
+      });
+    });
+
+    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+    wishlistButtons.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.classList.toggle("active");
+        if(this.classList.contains("active")) {
+          showToast("Added to your wishlist! ❤️");
+        } else {
+          showToast("Removed from wishlist.");
         }
       });
     });
