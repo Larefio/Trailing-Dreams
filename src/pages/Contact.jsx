@@ -1,13 +1,15 @@
+const base = import.meta.env.BASE_URL;
+
 export default function Contact() {
   return (
     <main className="contact-page-premium">
       <div className="contact-split-wrapper">
         <div className="contact-image-side">
-          <img src="img/contact_desk.png" alt="Contact Us Desk" className="contact-hero-img" />
+          <img src={`${base}img/contact_desk.png`} alt="Contact Us Desk" className="contact-hero-img" />
           <div className="contact-image-overlay">
             <h2>Let's Talk Plants.</h2>
             <p>We are here to help your indoor jungle thrive. Reach out with any questions, requests, or just to say hello.</p>
-            
+
             <div className="contact-info-list">
               <div className="contact-info-row">
                 <span className="info-icon">✉️</span>
@@ -51,7 +53,7 @@ export default function Contact() {
                 <input id="email" name="email" type="email" placeholder="john@example.com" autoComplete="email" required />
               </div>
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="subject">Subject (Optional)</label>
               <input id="subject" name="subject" type="text" placeholder="What is this regarding?" />

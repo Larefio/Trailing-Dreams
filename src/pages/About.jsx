@@ -1,3 +1,5 @@
+const base = import.meta.env.BASE_URL;
+
 export default function About() {
   return (
     <main className="about-page-premium">
@@ -13,7 +15,7 @@ export default function About() {
             </p>
           </div>
           <div className="about-hero-image">
-            <img src="img/about_greenhouse.png" alt="Trailing Dreams Greenhouse" loading="lazy" />
+            <img src={`${base}img/about_greenhouse.png`} alt="Trailing Dreams Greenhouse" loading="lazy" />
           </div>
         </div>
       </section>

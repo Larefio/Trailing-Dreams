@@ -1,17 +1,27 @@
 import { Droplet, Sun, Wind, ShieldAlert, Sparkles, Thermometer, Box } from 'lucide-react';
+
+const base = import.meta.env.BASE_URL;
+
 export default function CareGuide() {
   return (
     <main className="care-page-premium">
-      <section className="care-hero" style={{ background: "linear-gradient(rgba(146, 188, 161, 0.8), rgba(255, 155, 134, 0.8)), url('img/philodendrom.jpeg') center/cover no-repeat" }}>
+      <section
+        className="care-hero"
+        style={{
+          background: `linear-gradient(rgba(146, 188, 161, 0.8), rgba(255, 155, 134, 0.8)), url('${base}img/philodendrom.jpeg') center/cover no-repeat`
+        }}
+      >
         <div className="container">
           <h1 style={{ color: '#fff', textShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>Plant Care Guide</h1>
-          <p style={{ color: '#fff', fontWeight: 500 }}>Expert tips and detailed directions to help your unique botanical varieties flourish perfectly inside your home green space.</p>
+          <p style={{ color: '#fff', fontWeight: 500 }}>
+            Expert tips and detailed directions to help your unique botanical varieties flourish perfectly inside your home green space.
+          </p>
         </div>
       </section>
       <section className="care-zigzag-wrapper container">
         <article className="care-zigzag-row">
           <div className="care-zz-img">
-            <img src="img/Darlingtonia.jpg" alt="Carnivorous Plants Care" />
+            <img src={`${base}img/Darlingtonia.jpg`} alt="Carnivorous Plants Care" />
           </div>
           <div className="care-zz-content">
             <h2>Carnivorous Plants</h2>
