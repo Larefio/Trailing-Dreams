@@ -181,7 +181,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 120px 20px 80px 20px;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, #edeae0 100%);
+  background: linear-gradient(rgba(24, 33, 26, 0.65), rgba(24, 33, 26, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Botanical_Garden_V.L._Komarov_Botanical_Institute.jpg/1920px-Botanical_Garden_V.L._Komarov_Botanical_Institute.jpg') center/cover no-repeat;
   text-align: center;
 }
 
@@ -196,7 +196,8 @@ img {
 .hero h1 {
   font-size: 36px;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
@@ -204,7 +205,8 @@ img {
 .hero p {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: #eef5e7;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .btn {
@@ -388,6 +390,7 @@ img {
   transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   justify-content: center;
+  gap: 10px; /* overlay gap */
   gap: 10px;
   gap: 10px;
 }
