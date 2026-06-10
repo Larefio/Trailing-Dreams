@@ -60,43 +60,91 @@ if (menuToggle && navLinks) {
   });
 }
 
+// Modularized component for Product Card HTML
+function createProductCardHTML(key, plant) {
+  // Use just the first sentence for the short description
+  const shortDesc = plant.desc.split('.')[0] + '.';
+  return `
+    <article class="product" data-category="${plant.category}">
+      <a href="product.html?name=${key}" aria-label="View ${plant.title}">
+        <img src="${plant.img}" alt="${plant.title}" loading="lazy" />
+        <h2>${plant.title}</h2>
+        <p class="desc">${shortDesc}</p>
+      </a>
+      <div class="product-controls">
+        <p class="price">${plant.price}</p>
+        <button type="button" class="shop-add-btn" data-id="${key}" aria-label="Add ${plant.title} to cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </button>
+      </div>
+    </article>
+  `;
+}
+
 const shopContainer = document.querySelector(".shop-layout");
 if (shopContainer) {
   const searchInput = document.getElementById("shop-search-input");
   const emptyState = document.getElementById("shop-empty-state");
   const categoryButtons = document.querySelectorAll(".category-btn");
-  const products = document.querySelectorAll(".product");
+  const productsGrid = document.getElementById("products-grid");
 
-  products.forEach((product) => {
-    const link = product.querySelector("a");
-    if (link) {
-      const urlParams = new URLSearchParams(
-        link.getAttribute("href").split("?")[1],
-      );
-      const plantKey = urlParams.get("name");
-      if (plantKey && plantDatabase[plantKey]) {
-        product.setAttribute("data-category", plantDatabase[plantKey].category);
-      }
-    }
-  });
+  function bindAddButtons() {
+    const shopAddButtons = document.querySelectorAll(".shop-add-btn");
+    shopAddButtons.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const plantKey = this.getAttribute("data-id");
+        const plantData = plantDatabase[plantKey];
+
+        if (plantData) {
+          let cart = getLocalCart();
+          const existingItem = cart.find((item) => item.id === plantKey);
+
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({
+              id: plantKey,
+              title: plantData.title,
+              price: parseInt(plantData.price.replace('$', '')),
+              img: plantData.img,
+              quantity: 1,
+            });
+          }
+
+          saveLocalCart(cart);
+          showToast(`${plantData.title} added to cart!`);
+        }
+      });
+    });
+  }
+
+  // Render all products from the database dynamically
+  if (productsGrid) {
+    productsGrid.innerHTML = "";
+    Object.keys(plantDatabase).forEach(key => {
+      productsGrid.innerHTML += createProductCardHTML(key, plantDatabase[key]);
+    });
+    bindAddButtons(); // Attach click events to the newly rendered buttons
+  }
 
   function filterCatalog() {
-    const searchText = searchInput
-      ? searchInput.value.toLowerCase().trim()
-      : "";
+    const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
     const activeCategoryBtn = document.querySelector(".category-btn.active");
-    const selectedCategory = activeCategoryBtn
-      ? activeCategoryBtn.getAttribute("data-category")
-      : "all";
+    const selectedCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute("data-category") : "all";
     let visibleCount = 0;
 
-    products.forEach((product) => {
+    const currentProducts = document.querySelectorAll(".product");
+    currentProducts.forEach((product) => {
       const title = product.querySelector("h2").textContent.toLowerCase();
       const productCategory = product.getAttribute("data-category") || "";
 
       const matchesSearch = title.includes(searchText);
-      const matchesCategory =
-        selectedCategory === "all" || productCategory === selectedCategory;
+      const matchesCategory = selectedCategory === "all" || productCategory === selectedCategory;
 
       if (matchesSearch && matchesCategory) {
         product.style.display = "block";
@@ -124,35 +172,6 @@ if (shopContainer) {
       categoryButtons.forEach((b) => b.classList.remove("active"));
       this.classList.add("active");
       filterCatalog();
-    });
-  });
-
-  const shopAddButtons = document.querySelectorAll(".shop-add-btn");
-  shopAddButtons.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const plantKey = this.getAttribute("data-id");
-      const plantData = plantDatabase[plantKey];
-
-      if (plantData) {
-        let cart = getLocalCart();
-        const existingItem = cart.find((item) => item.id === plantKey);
-
-        if (existingItem) {
-          existingItem.quantity += 1;
-        } else {
-          cart.push({
-            id: plantKey,
-            title: plantData.title,
-            price: parseInt(plantData.price.replace('$', '')),
-            img: plantData.img,
-            quantity: 1,
-          });
-        }
-
-        saveLocalCart(cart);
-        showToast(`${plantData.title} added to cart!`);
-      }
     });
   });
 }
