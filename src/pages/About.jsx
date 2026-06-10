@@ -13,7 +13,7 @@ export default function About() {
             </p>
           </div>
           <div className="about-hero-image">
-            <img src="/img/about_greenhouse.png" alt="Trailing Dreams Greenhouse" loading="lazy" />
+            <img src="img/about_greenhouse.png" alt="Trailing Dreams Greenhouse" loading="lazy" />
           </div>
         </div>
       </section>

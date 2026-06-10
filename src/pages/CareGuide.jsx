@@ -11,7 +11,7 @@ export default function CareGuide() {
       <section className="care-zigzag-wrapper container">
         <article className="care-zigzag-row">
           <div className="care-zz-img">
-            <img src="/img/Darlingtonia.jpg" alt="Carnivorous Plants Care" />
+            <img src="img/Darlingtonia.jpg" alt="Carnivorous Plants Care" />
           </div>
           <div className="care-zz-content">
             <h2>Carnivorous Plants</h2>

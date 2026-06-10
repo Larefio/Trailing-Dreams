@@ -3,7 +3,7 @@ export default function Contact() {
     <main className="contact-page-premium">
       <div className="contact-split-wrapper">
         <div className="contact-image-side">
-          <img src="/img/contact_desk.png" alt="Contact Us Desk" className="contact-hero-img" />
+          <img src="img/contact_desk.png" alt="Contact Us Desk" className="contact-hero-img" />
           <div className="contact-image-overlay">
             <h2>Let's Talk Plants.</h2>
             <p>We are here to help your indoor jungle thrive. Reach out with any questions, requests, or just to say hello.</p>
