@@ -1,7 +1,7 @@
 const plantDatabase = {
   darlingtonia: {
     title: "Darlingtonia californica",
-    price: "$100",
+    price: "$35",
     img: "img/Darlingtonia.jpg",
     category: "carnivorous",
     desc: "Unique carnivorous plant with a cobra-like shape. Native to Northern California and Oregon, this striking species captures the imagination with its hollow hooded leaves and translucent fangs that trap foraging insects naturally.",
@@ -12,7 +12,7 @@ const plantDatabase = {
   },
   "hoya-carnosa": {
     title: "Hoya Carnosa",
-    price: "$100",
+    price: "$25",
     img: "img/hoya-carnosa.jpg",
     category: "indoor",
     desc: "Classic indoor trailing plant known as the porcelain flower. It produces beautiful, wax-like star clusters of sweetly scented pinkish flowers and features thick, deep green ornamental foliage perfect for hanging baskets.",
@@ -23,7 +23,7 @@ const plantDatabase = {
   },
   philodendron: {
     title: "Philodendron",
-    price: "$100",
+    price: "$30",
     img: "img/philodendrom.jpeg",
     category: "tropical",
     desc: "Lush tropical plant featuring large, highly decorative heart-shaped leaves. Exceptionally easy to grow indoors, it brings a vibrant jungle ambiance to any living room corner while effectively purifying indoor air.",
@@ -34,7 +34,7 @@ const plantDatabase = {
   },
   syngonium: {
     title: "Pink Syngonium",
-    price: "$100",
+    price: "$20",
     img: "img/syngonium-rosa.jpg",
     category: "indoor",
     desc: "Eye-catching indoor plant displaying stunning arrowhead leaves flushed with pastel pink hues. Compact as a young plant, it gracefully begins to trail over time, offering incredible contrast against green collections.",
@@ -45,7 +45,7 @@ const plantDatabase = {
   },
   "monstera-borsigiana": {
     title: "Monstera Borsigiana",
-    price: "$100",
+    price: "$150",
     img: "img/Monstera-Borsigiana.jpg",
     category: "tropical",
     desc: "Fast-growing and iconic tropical climber highly popular worldwide. Its dramatic, large fenestrated leaves develop quickly when provided vertical support like a moss pole, creating an undeniable architectural statement.",
@@ -56,7 +56,7 @@ const plantDatabase = {
   },
   "aloe-aristata": {
     title: "Aloe aristata",
-    price: "$100",
+    price: "$15",
     img: "img/Aloe-aristata.jpg",
     category: "succulents",
     desc: "Hardy and beautifully patterned rosette succulent ideal for small indoor surfaces. Features deep green spear-shaped leaves covered in white raised bumps and soft lace-like spines along its geometric borders.",
@@ -67,7 +67,7 @@ const plantDatabase = {
   },
   maranta: {
     title: "Lemon Lime Maranta",
-    price: "$100",
+    price: "$25",
     img: "img/maranta-lima-naranja.jpg",
     category: "indoor",
     desc: "Stunning ornamental prayer plant with spectacular bright green neon veins running across its patterned foliage. Its leaves fold upwards during night hours, resembling hands folded together in a quiet prayer posture.",
@@ -78,7 +78,7 @@ const plantDatabase = {
   },
   sansevieria: {
     title: "Sansevieria",
-    price: "$100",
+    price: "$25",
     img: "img/sansevieria.jpg",
     category: "indoor",
     desc: "Unbeatably resilient snake plant characterized by rigid, sword-like jagged leaves growing upright. Renowned for surviving minimal care routines, it is the absolute perfect choice for novice plant parents.",
@@ -89,7 +89,7 @@ const plantDatabase = {
   },
   dracaena: {
     title: "Dracaena",
-    price: "$100",
+    price: "$40",
     img: "img/Dracaena.jpg",
     category: "indoor",
     desc: "Elegant and architectural ornamental tree-like houseplant featuring narrow arched ribbon leaves clustered over a slender woody stalk. Excellent for filling vertical structural gaps inside modern offices or empty rooms.",
@@ -100,7 +100,7 @@ const plantDatabase = {
   },
   "helecho-boston": {
     title: "Boston Fern",
-    price: "$100",
+    price: "$30",
     img: "img/Helecho-Boston.jpg",
     category: "indoor",
     desc: "Classic lush green fern with soft arching fronds that produce a waterfall effect. Thrives beautifully in high humidity spaces like bathrooms and needs protection against harsh dry drafts to maintain its soft foliage.",
@@ -111,7 +111,7 @@ const plantDatabase = {
   },
   haworthia: {
     title: "Haworthia",
-    price: "$100",
+    price: "$15",
     img: "img/Haworthia.jpg",
     category: "succulents",
     desc: "Charmingly petite zebra-striped succulent forming tight rosettes of thick pointed leaves. Highly valued for remaining small and manageable, making it fantastic for sunny desktop configurations or terrariums.",
@@ -122,7 +122,7 @@ const plantDatabase = {
   },
   "sedum-rubrotinctum": {
     title: "Sedum Rubrotinctum",
-    price: "$100",
+    price: "$12",
     img: "img/Sedum.jpg",
     category: "succulents",
     desc: "Whimsical creeping succulent famously referred to as the jelly bean plant. Its glossy rounded leaves display bright jade colors that dramatically blush into deep crimson tips when exposed to strong open sunshine.",
@@ -133,7 +133,7 @@ const plantDatabase = {
   },
   alocasia: {
     title: "Alocasia Polly",
-    price: "$100",
+    price: "$35",
     img: "img/Alocasia-Polly.jpg",
     category: "tropical",
     desc: "Striking tropical species showcasing shield-shaped leaves accented by heavy metallic silver veins and wavy margins. An exotic centerpiece that immediately draws visual focus in high-end interiors.",
@@ -144,7 +144,7 @@ const plantDatabase = {
   },
   "nepenthes-rajah": {
     title: "Nepenthes Rajah",
-    price: "$100",
+    price: "$85",
     img: "img/Nepenthes-Rajah.jpg",
     category: "carnivorous",
     desc: "Magnificent exotic carnivorous pitcher plant highly sought after by premium collectors. It develops spectacular crimson traps hanging off leaf tendrils designed to hold fluids and capture insects in damp terrarium setups.",
@@ -155,7 +155,7 @@ const plantDatabase = {
   },
   "begonia-amphioxus": {
     title: "Begonia Amphioxus",
-    price: "$100",
+    price: "$25",
     img: "img/Begonia-Amphioxus.jpg",
     category: "tropical",
     desc: "Rare exotic specimen displaying narrow pointed butterfly leaves completely speckled with vivid crimson dots. Requires enclosed humid atmospheres like glass domes or vivariums to successfully flourish.",
@@ -166,7 +166,7 @@ const plantDatabase = {
   },
   "calathea-musaica": {
     title: "Calathea Musaica",
-    price: "$100",
+    price: "$35",
     img: "img/Calathea-Musaica.jpg",
     category: "tropical",
     desc: "Intricate tropical foliage plant possessing a highly unusual network of fine mosaic checkerboard line patterns on light green leaves. Far sturdier than typical calatheas, it gracefully elevates plant shelves.",
@@ -177,7 +177,7 @@ const plantDatabase = {
   },
   "euphorbia-tirucalli": {
     title: "Euphorbia tirucalli",
-    price: "$100",
+    price: "$30",
     img: "img/Euphorbia-tirucalli.jpg",
     category: "succulents",
     desc: "Striking succulent shrub composed of coral-like cylindrical pencil branches growing upwards. Turns bright shades of yellow, orange, and fiery red at the tips when given intense, unfiltered direct greenhouse light.",
@@ -188,7 +188,7 @@ const plantDatabase = {
   },
   tillandsia: {
     title: "Tillandsia",
-    price: "$100",
+    price: "$10",
     img: "img/Tillandsia.jpg",
     category: "tropical",
     desc: "Fascinating true air plant that grows naturally without soil substrates. Absorbs moisture directly through tiny silver scales covering its sculptural leaves. Simply dunk in filtered containers once a week.",
@@ -199,7 +199,7 @@ const plantDatabase = {
   },
   fockea: {
     title: "Fockea",
-    price: "$100",
+    price: "$45",
     img: "img/Fockea.jpg",
     category: "succulents",
     desc: "Unique caudiciform plant forming a rough swelling base structure designed to retain precious moisture reserves. Slender vine branches spill outwards from the top center, making it a masterpiece choice for collectors.",

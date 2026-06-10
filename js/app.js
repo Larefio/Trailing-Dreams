@@ -144,7 +144,7 @@ if (shopContainer) {
           cart.push({
             id: plantKey,
             title: plantData.title,
-            price: 100,
+            price: parseInt(plantData.price.replace('$', '')),
             img: plantData.img,
             quantity: 1,
           });
@@ -226,7 +226,7 @@ if (productDetailTemplate) {
         cart.push({
           id: plantKey,
           title: plantData.title,
-          price: 100,
+          price: parseInt(plantData.price.replace('$', '')),
           img: plantData.img,
           quantity: quantityToAdd,
         });
@@ -260,6 +260,32 @@ if (cartContainerLayout) {
     if (totalText) totalText.textContent = `$${total}`;
   }
 
+  // Modularized component for Cart Item HTML
+  function createCartItemHTML(item) {
+    return `
+      <div class="cart-item-image">
+        <img src="${item.img}" alt="${item.title}" />
+      </div>
+      <div class="cart-item-details">
+        <h2>${item.title}</h2>
+        <p class="cart-item-price">$${item.price}</p>
+      </div>
+      <div class="cart-item-quantity">
+        <div class="quantity-selector">
+          <button type="button" class="qty-btn item-minus">—</button>
+          <input type="number" class="item-qty" value="${item.quantity}" min="1" readonly />
+          <button type="button" class="qty-btn item-plus">+</button>
+        </div>
+      </div>
+      <div class="cart-item-total">
+        <p class="item-total-price">$${item.price * item.quantity}</p>
+      </div>
+      <div class="cart-item-remove">
+        <button type="button" class="remove-btn" aria-label="Remove item">&times;</button>
+      </div>
+    `;
+  }
+
   function renderCart() {
     let cart = getLocalCart();
 
@@ -280,28 +306,7 @@ if (cartContainerLayout) {
       itemRow.className = "cart-item";
       itemRow.setAttribute("data-product-id", item.id);
 
-      itemRow.innerHTML = `
-        <div class="cart-item-image">
-          <img src="${item.img}" alt="${item.title}" />
-        </div>
-        <div class="cart-item-details">
-          <h2>${item.title}</h2>
-          <p class="cart-item-price">$${item.price}</p>
-        </div>
-        <div class="cart-item-quantity">
-          <div class="quantity-selector">
-            <button type="button" class="qty-btn item-minus">—</button>
-            <input type="number" class="item-qty" value="${item.quantity}" min="1" readonly />
-            <button type="button" class="qty-btn item-plus">+</button>
-          </div>
-        </div>
-        <div class="cart-item-total">
-          <p class="item-total-price">$${item.price * item.quantity}</p>
-        </div>
-        <div class="cart-item-remove">
-          <button type="button" class="remove-btn" aria-label="Remove item">&times;</button>
-        </div>
-      `;
+      itemRow.innerHTML = createCartItemHTML(item);
 
       const minusBtn = itemRow.querySelector(".item-minus");
       const plusBtn = itemRow.querySelector(".item-plus");
