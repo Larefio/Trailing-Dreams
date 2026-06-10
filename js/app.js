@@ -60,9 +60,7 @@ if (menuToggle && navLinks) {
   });
 }
 
-// Modularized component for Product Card HTML
 function createProductCardHTML(key, plant) {
-  // Use just the first sentence for the short description
   const shortDesc = plant.desc.split('.')[0] + '.';
   return `
     <article class="product" data-category="${plant.category}">
@@ -123,13 +121,12 @@ if (shopContainer) {
     });
   }
 
-  // Render all products from the database dynamically
   if (productsGrid) {
     productsGrid.innerHTML = "";
     Object.keys(plantDatabase).forEach(key => {
       productsGrid.innerHTML += createProductCardHTML(key, plantDatabase[key]);
     });
-    bindAddButtons(); // Attach click events to the newly rendered buttons
+    bindAddButtons();
   }
 
   function filterCatalog() {
@@ -279,7 +276,6 @@ if (cartContainerLayout) {
     if (totalText) totalText.textContent = `$${total}`;
   }
 
-  // Modularized component for Cart Item HTML
   function createCartItemHTML(item) {
     return `
       <div class="cart-item-image">
