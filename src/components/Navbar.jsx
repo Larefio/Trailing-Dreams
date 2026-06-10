@@ -29,6 +29,8 @@ export default function Navbar() {
           <ul className="nav-links-premium">
             <li><Link to="/shop">Shop</Link></li>
             <li><Link to="/care">Care Guide</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
           <div className="nav-actions-premium">
             <Link to="/cart" className="nav-cart-btn">
