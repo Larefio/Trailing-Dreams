@@ -1,4 +1,6 @@
 :root {
+  --bg-glass: rgba(251, 250, 247, 0.85);
+
   --bg-primary: #fbfaf7;
   --text-primary: #1c291e;
   --text-secondary: #5a6b4a;
@@ -386,6 +388,7 @@ img {
   transition: bottom 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   justify-content: center;
+  gap: 10px;
   gap: 10px;
 }
 
@@ -1379,7 +1382,23 @@ img {
   font-weight: 500;
 }
 
+
+/* Badges & New Buttons */
+.product-badge { position: absolute; top: 15px; left: 15px; padding: 6px 12px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.product-badge.new { background-color: var(--text-primary); color: var(--bg-primary); }
+.product-badge.rare { background-color: var(--accent-olive); color: var(--bg-primary); }
+.product-badge.sale { background-color: var(--accent-terracotta); color: #ffffff; }
+.wishlist-btn { position: absolute; top: 15px; right: 15px; width: 38px; height: 38px; border-radius: 50%; background-color: var(--bg-glass); backdrop-filter: blur(5px); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; color: var(--text-primary); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+.wishlist-btn:hover { transform: scale(1.1); color: var(--accent-terracotta); }
+.wishlist-btn.active svg { fill: var(--accent-terracotta); stroke: var(--accent-terracotta); }
+.quick-view-btn { width: 44px; height: 44px; border-radius: 50%; background-color: var(--bg-glass); backdrop-filter: blur(5px); color: var(--text-primary); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; flex-shrink: 0; }
+.quick-view-btn:hover { background-color: var(--text-primary); color: var(--bg-primary); transform: translateY(-2px); }
+
 @media (min-width: 768px) {
+
+  .footer-grid-premium { grid-template-columns: repeat(2, 1fr); }
+  .shop-layout { display: grid; grid-template-columns: 240px 1fr; align-items: start; gap: 30px; }
+
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -1426,6 +1445,10 @@ img {
 }
 
 @media (min-width: 1024px) {
+
+  .footer-grid-premium { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+  .shop-layout { grid-template-columns: 280px 1fr; gap: 40px; }
+
   .site-header {
     position: static;
     background-color: #eef5e7;

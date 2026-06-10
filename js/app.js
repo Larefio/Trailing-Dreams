@@ -62,9 +62,11 @@ if (menuToggle && navLinks) {
 
 function createProductCardHTML(key, plant) {
   let badgeHTML = '';
-  if (key === 'monstera-borsigiana') badgeHTML = '<span class="product-badge rare">Rare Find</span>';
-  else if (key === 'nepenthes-rajah') badgeHTML = '<span class="product-badge sale">Sale -20%</span>';
-  else if (key === 'alocasia') badgeHTML = '<span class="product-badge new">New Arrival</span>';
+  if (plant.badge) {
+    let badgeClass = plant.badge.toLowerCase().includes('sale') ? 'sale' : 
+                     plant.badge.toLowerCase().includes('new') ? 'new' : 'rare';
+    badgeHTML = `<span class="product-badge ${badgeClass}">${plant.badge}</span>`;
+  }
 
   return `
     <article class="product" data-category="${plant.category}">
@@ -89,7 +91,7 @@ function createProductCardHTML(key, plant) {
         <a href="product.html?name=${key}">
           <h2>${plant.title}</h2>
         </a>
-        <p class="price">${plant.price}</p>
+        <p class="price">$${plant.price}</p>
       </div>
     </article>
   `;
@@ -101,6 +103,19 @@ if (shopContainer) {
   const emptyState = document.getElementById("shop-empty-state");
   const categoryButtons = document.querySelectorAll(".category-btn");
   const productsGrid = document.getElementById("products-grid");
+
+  function updateCartIconCount() {
+    let cart = getLocalCart();
+    let count = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const cartLinks = document.querySelectorAll('a[href="cart.html"]');
+    cartLinks.forEach(link => {
+      if(!link.querySelector('.cart-count-badge')) {
+        link.innerHTML += ' <span class="cart-count-badge" style="background:var(--accent-terracotta);color:#fff;border-radius:50%;padding:2px 6px;font-size:10px;">' + count + '</span>';
+      } else {
+        link.querySelector('.cart-count-badge').textContent = count;
+      }
+    });
+  }
 
   function bindAddButtons() {
     const shopAddButtons = document.querySelectorAll(".shop-add-btn-premium");
@@ -120,7 +135,7 @@ if (shopContainer) {
             cart.push({
               id: plantKey,
               title: plantData.title,
-              price: parseInt(plantData.price.replace('$', '')),
+              price: plantData.price,
               img: plantData.img,
               quantity: 1,
             });
@@ -159,23 +174,22 @@ if (shopContainer) {
     const searchText = searchInput ? searchInput.value.toLowerCase().trim() : "";
     const activeCategoryBtn = document.querySelector(".category-btn.active");
     const selectedCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute("data-category") : "all";
+    
+    if (productsGrid) productsGrid.innerHTML = "";
     let visibleCount = 0;
 
-    const currentProducts = document.querySelectorAll(".product");
-    currentProducts.forEach((product) => {
-      const title = product.querySelector("h2").textContent.toLowerCase();
-      const productCategory = product.getAttribute("data-category") || "";
-
-      const matchesSearch = title.includes(searchText);
-      const matchesCategory = selectedCategory === "all" || productCategory === selectedCategory;
+    Object.keys(plantDatabase).forEach(key => {
+      const plant = plantDatabase[key];
+      const matchesSearch = plant.title.toLowerCase().includes(searchText);
+      const matchesCategory = selectedCategory === "all" || plant.category === selectedCategory;
 
       if (matchesSearch && matchesCategory) {
-        product.style.display = "block";
+        if (productsGrid) productsGrid.innerHTML += createProductCardHTML(key, plant);
         visibleCount++;
-      } else {
-        product.style.display = "none";
       }
     });
+
+    bindAddButtons();
 
     if (emptyState) {
       if (visibleCount === 0) {
@@ -185,6 +199,7 @@ if (shopContainer) {
       }
     }
   }
+
 
   if (searchInput) {
     searchInput.addEventListener("input", filterCatalog);
@@ -360,10 +375,8 @@ if (cartContainerLayout) {
         const activeItem = currentCart.find((i) => i.id === item.id);
         if (activeItem && activeItem.quantity > 1) {
           activeItem.quantity -= 1;
-          qtyField.value = activeItem.quantity;
-          rowTotalText.textContent = `$${activeItem.price * activeItem.quantity}`;
           saveLocalCart(currentCart);
-          updateCartTotals(currentCart);
+          renderCart();
         }
       });
 
@@ -372,10 +385,8 @@ if (cartContainerLayout) {
         const activeItem = currentCart.find((i) => i.id === item.id);
         if (activeItem) {
           activeItem.quantity += 1;
-          qtyField.value = activeItem.quantity;
-          rowTotalText.textContent = `$${activeItem.price * activeItem.quantity}`;
           saveLocalCart(currentCart);
-          updateCartTotals(currentCart);
+          renderCart();
         }
       });
 
@@ -402,15 +413,4 @@ if (cartContainerLayout) {
   }
 }
 
-const careCards = document.querySelectorAll(".care-card-item");
-if (careCards.length > 0) {
-  careCards.forEach((card) => {
-    const trigger = card.querySelector(".care-summary-trigger");
-    if (trigger) {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        card.classList.toggle("active");
-      });
-    }
-  });
-}
+
