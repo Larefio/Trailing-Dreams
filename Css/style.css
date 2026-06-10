@@ -2401,3 +2401,99 @@ img {
   fill: #ff4d4f;
   color: #ff4d4f;
 }
+
+
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 767px) {
+  /* Navbar & Logo */
+  .navbar-premium {
+    height: 70px !important;
+    padding: 0 15px !important;
+  }
+  .logo-premium-dynamic {
+    gap: 8px !important;
+  }
+  .logo-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .logo-trailing {
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+  }
+  .logo-dreams {
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+    margin-top: 2px !important;
+  }
+  
+  /* Shop Page Padding & Elements */
+  .shop-page {
+    padding-top: 100px !important; /* Adjust for 70px navbar */
+  }
+  .shop-page .category-btn {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+  .categories-wrapper {
+    padding-bottom: 5px !important;
+    gap: 8px !important;
+  }
+  .shop-page .search input {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  .shop-page .product {
+    padding: 10px !important;
+    border-radius: 16px !important;
+  }
+  .shop-page .product-image-wrapper img {
+    height: 250px !important;
+  }
+  
+  /* Care Guide */
+  .care-page-premium {
+    padding-top: 50px !important;
+  }
+  .care-hero {
+    padding: 60px 15px 40px !important;
+    margin-bottom: 40px !important;
+  }
+  .care-hero h1 {
+    font-size: 28px !important;
+  }
+  .care-hero p {
+    font-size: 15px !important;
+  }
+  .care-zigzag-wrapper {
+    gap: 50px !important;
+  }
+  .care-zigzag-row {
+    gap: 20px !important;
+  }
+  .care-zz-img img {
+    height: 250px !important;
+    border-radius: 16px !important;
+  }
+  .care-zz-content h2 {
+    font-size: 24px !important;
+    text-align: center !important;
+  }
+  .zz-desc {
+    font-size: 14px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+  .zz-icon-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 15px !important;
+  }
+  .zz-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+}
