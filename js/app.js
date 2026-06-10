@@ -104,18 +104,19 @@ if (shopContainer) {
   const categoryButtons = document.querySelectorAll(".category-btn");
   const productsGrid = document.getElementById("products-grid");
 
-  function updateCartIconCount() {
+  window.updateCartIconCount = function() {
     let cart = getLocalCart();
     let count = cart.reduce((acc, item) => acc + item.quantity, 0);
     const cartLinks = document.querySelectorAll('a[href="cart.html"]');
     cartLinks.forEach(link => {
-      if(!link.querySelector('.cart-count-badge')) {
-        link.innerHTML += ' <span class="cart-count-badge" style="background:var(--accent-terracotta);color:#fff;border-radius:50%;padding:2px 6px;font-size:10px;">' + count + '</span>';
+      let badge = link.querySelector('.cart-count-badge');
+      if(badge) {
+        badge.textContent = count;
       } else {
-        link.querySelector('.cart-count-badge').textContent = count;
+        link.innerHTML += ' <span class="cart-count-badge">' + count + '</span>';
       }
     });
-  }
+  };
 
   function bindAddButtons() {
     const shopAddButtons = document.querySelectorAll(".shop-add-btn-premium");
@@ -143,7 +144,7 @@ if (shopContainer) {
 
           saveLocalCart(cart);
           showToast(`${plantData.title} added to cart!`);
-          updateCartIconCount();
+          window.updateCartIconCount();
         }
       });
     });
@@ -414,3 +415,6 @@ if (cartContainerLayout) {
 }
 
 
+
+
+document.addEventListener('DOMContentLoaded', () => { if(window.updateCartIconCount) window.updateCartIconCount(); });

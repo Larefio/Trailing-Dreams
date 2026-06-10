@@ -1,21 +1,28 @@
-const navbarHTML = `<header class="site-header">
-      <nav class="navbar" aria-label="Main Navigation">
-        <a href="index.html">
-          <img src="img/logo.svg" alt="Trailing Dreams Logo" class="logo" />
+const navbarHTML = `<header class="site-header-premium">
+      <nav class="navbar-premium" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <img src="img/logo.svg" alt="Trailing Dreams Logo" class="logo-premium" />
         </a>
 
         <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
-        <label for="menu-toggle" class="menu-button" aria-label="Toggle menu">
-          <span class="hamburger"></span>
+        <label for="menu-toggle" class="menu-button-premium" aria-label="Toggle menu">
+          <span class="hamburger-premium"></span>
         </label>
 
-        <ul class="nav-links">
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="care.html">Care Guide</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
+        <div class="nav-menu-premium">
+          <ul class="nav-links-premium">
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="care.html">Care Guide</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-actions-premium">
+            <a href="cart.html" class="nav-cart-btn" aria-label="View Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              Cart
+            </a>
+          </div>
+        </div>
       </nav>
     </header>`;
 const footerHTML = `<footer class="site-footer-premium">
