@@ -2213,6 +2213,12 @@ img {
   transform: scale(1.05);
 }
 
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .menu-button-premium {
   display: flex;
   align-items: center;
