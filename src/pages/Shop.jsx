@@ -36,14 +36,14 @@ export default function Shop() {
           <div className="main-content">
             <div className="search">
               <div style={{ position: 'relative' }}>
-                <Search size={20} style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent-terracotta)' }} />
+                <Search size={20} style={{ position: 'absolute', left: '24px', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent-terracotta)' }} />
                 <input
                   type="text"
-                  placeholder="Search our beautiful plants..."
+                  placeholder="Search cute plants & tools..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="search-input"
-                  style={{ padding: '16px 26px 16px 55px' }}
+                  style={{ padding: '16px 26px 16px 60px' }}
                 />
               </div>
             </div>
