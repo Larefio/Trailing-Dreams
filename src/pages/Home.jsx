@@ -11,8 +11,7 @@ export default function Home() {
       <section
         className="hero"
         style={{
-          background:
-            `linear-gradient(to bottom, rgba(21, 22, 40, 0.6), rgba(21, 22, 40, 0.8)), url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat`,
+          background: `linear-gradient(to bottom, rgba(21, 22, 40, 0.6), rgba(21, 22, 40, 0.8)), url('${base}img/sala-jardin.jpg') center center no-repeat`,
         }}
       >
         <div className="container">

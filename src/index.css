@@ -3489,3 +3489,14 @@ body, html {
     display: none !important;
   }
 }
+
+/* BUG FIXES */
+.nav-menu-premium.open {
+  display: flex !important;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-size: 140vw auto !important;
+  }
+}
