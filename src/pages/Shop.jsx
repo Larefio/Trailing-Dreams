@@ -42,7 +42,7 @@ export default function Shop() {
                   placeholder="Search our beautiful plants..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  style={{ paddingLeft: '50px' }}
+                  className="search-input"
                 />
               </div>
             </div>

@@ -3095,3 +3095,38 @@ body, html {
     margin-bottom: 20px;
   }
 }
+
+
+/* SHOP ENHANCEMENTS */
+.search-input {
+  padding-left: 50px !important;
+}
+
+@media (max-width: 768px) {
+  .product {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 12px;
+    box-shadow: 0 8px 25px rgba(47, 79, 62, 0.05);
+  }
+  
+  .product-image-wrapper {
+    border-radius: 16px;
+  }
+  
+  .product-image-wrapper img {
+    height: 240px;
+  }
+  
+  .product-controls {
+    padding: 8px 4px;
+  }
+  
+  .product h2 {
+    font-size: 18px;
+  }
+  
+  .product-controls .price {
+    font-size: 16px;
+  }
+}
