@@ -43,6 +43,10 @@ const rawPlants = [
 
   // TROPICAL
   { id: 'maranta-leuconeura', title: 'Prayer Plant', price: 21, category: 'tropical', imgFile: 'maranta-lima-naranja.jpg', description: 'The Prayer Plant folds its leaves at night. Shows unique patterns on the foliage.' },
+  { id: 'monstera-deliciosa', title: 'Monstera Deliciosa', price: 45, category: 'tropical', imgFile: 'Monstera-Deliciosa.jpg', description: 'Famous for its natural leaf holes. A stunning tropical statement piece.' },
+  { id: 'calathea-orbifolia', title: 'Calathea Orbifolia', price: 38, category: 'tropical', imgFile: 'Calathea-Orbifolia.jpg', description: 'Oversized leaves with metallic silver stripes. Thrives in humidity.' },
+  { id: 'bird-of-paradise', title: 'Bird of Paradise', price: 65, category: 'tropical', imgFile: 'Bird-of-Paradise.jpg', description: 'Can grow up to 6 feet indoors. Brings a massive tropical vibe to any sunny room.' },
+  { id: 'magnolia-jane', title: 'Perfect Plants Jane Magnolia 1 Gallon', price: 24.99, category: 'tropical', imgFile: 'https://images.unsplash.com/photo-1555138166-508fb180a08e?w=500&h=500&fit=crop', description: 'Beautiful Jane Magnolia with stunning blooms. Perfect for adding a splash of color to your garden.' },
   { id: 'syngonium-rosa', title: 'Pink Syngonium', price: 32, category: 'tropical', imgFile: 'syngonium-rosa.jpg', description: 'Beautiful Arrowhead variety with pink hues on its leaves.' },
   { id: 'begonia-amphioxus', title: 'Begonia Amphioxus', price: 53, category: 'tropical', imgFile: 'Begonia-Amphioxus.jpg', description: 'With elongated leaves and distinctive spots, this species prefers terrarium environments.' },
   { id: 'tacca-chantrieri', title: 'Bat Flower', price: 48, category: 'tropical', imgFile: 'Tacca-chantrieri.jpg', description: 'The Bat Flower has impressive dark bracts. It is an exotic and rare beauty.' },
