@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { plants, getPlantById } from '../data/plants-fixed';
+import { plants, getPlantById, categories } from '../data/plants-fixed';
 import { CartContext } from '../context/CartContext';
 import { ArrowLeft, ShoppingBag, Sun, Droplet, Heart } from 'lucide-react';
 
@@ -29,7 +29,7 @@ export default function ProductDetails() {
         </div>
         <div className="product-details-info">
           <span className="product-details-category">
-            {plant.category}
+            {categories.find(c => c.id === plant.category)?.label || plant.category}
           </span>
           <h1>{plant.title}</h1>
           <p className="product-details-price">${plant.price.toFixed(2)}</p>
