@@ -3,91 +3,91 @@ const base = import.meta.env.BASE_URL;
 export const careGuides = [
   {
     id: 'indoor',
-    label: 'Plantas de Interior',
+    label: 'Indoor Plants',
     image: `${base}img/monstera.jpg`,
-    intro: 'La mayoría son tropicales adaptadas a interior. Clave: luz indirecta y no encharcar.',
+    intro: 'Most are tropical plants adapted to indoors. Key: indirect light and avoid overwatering.',
     specs: {
-      light: 'Luz brillante indirecta. Evita sol directo en horas pico.',
-      water: 'Riega cuando los 2-3cm superiores del sustrato estén secos.',
-      humidity: 'Media-alta (50-70%). Agrupa plantas o usa humidificador.',
-      soil: 'Sustrato aireado: turba + perlita + corteza (2:1:1).',
+      light: 'Bright indirect light. Avoid direct sun during peak hours.',
+      water: 'Water when the top 1-2 inches of soil are dry.',
+      humidity: 'Medium-high (50-70%). Group plants or use a humidifier.',
+      soil: 'Airy soil: peat + perlite + bark (2:1:1).',
       tips: [
-        'Rota la maceta semanalmente para crecimiento uniforme',
-        'Limpia hojas con paño húmedo cada mes',
-        'Fertiliza mensual en primavera-verano',
-        'Trasplanta cada 1-2 años en primavera'
+        'Rotate the pot weekly for even growth',
+        'Clean leaves with a damp cloth every month',
+        'Fertilize monthly in spring and summer',
+        'Repot every 1-2 years in spring'
       ]
     }
   },
   {
     id: 'succulents',
-    label: 'Suculentas y Cactus',
+    label: 'Succulents & Cacti',
     image: `${base}img/Aloe-aristata.jpg`,
-    intro: 'Almacenan agua en hojas/tallos. Menos es más: mejor secarse que pudrirse.',
+    intro: 'They store water in leaves/stems. Less is more: better to dry out than rot.',
     specs: {
-      light: 'Sol directo 4-6h/día. Ventana sur/oeste ideal.',
-      water: 'Riego profundo solo cuando sustrato 100% seco (10-14 días).',
-      humidity: 'Baja (30-40%). Buena ventilación evita hongos.',
-      soil: 'Sustrato mineral: arena gruesa + perlita + poco orgánico (1:1:1).',
+      light: 'Direct sun 4-6h/day. South/west facing window is ideal.',
+      water: 'Deep watering only when soil is 100% dry (10-14 days).',
+      humidity: 'Low (30-40%). Good ventilation prevents fungi.',
+      soil: 'Mineral soil: coarse sand + perlite + little organic matter (1:1:1).',
       tips: [
-        'Maceta con agujeros obligatoria',
-        'Riega el sustrato, no las hojas',
-        'Invierno: riego mínimo o nulo',
-        'Fertiliza 2-3 veces al año solo'
+        'Pot with drainage holes is mandatory',
+        'Water the soil, not the leaves',
+        'Winter: minimal or no watering',
+        'Fertilize 2-3 times a year only'
       ]
     }
   },
   {
     id: 'tropical',
-    label: 'Tropicales Exóticas',
+    label: 'Exotic Tropicals',
     image: `${base}img/maranta-lima-naranja.jpg`,
-    intro: 'Selva tropical en casa: calor, humedad alta y luz filtrada constante.',
+    intro: 'A tropical jungle at home: warmth, high humidity, and constant filtered light.',
     specs: {
-      light: 'Luz media-brillante filtrada. Sin sol directo.',
-      water: 'Mantén sustrato ligeramente húmedo siempre (no encharcado).',
-      humidity: 'Muy alta (70-90%). Esencial: humidificador o terrario.',
-      soil: 'Muy aireado: musgo sphagnum + perlita + corteza + carbón.',
+      light: 'Medium-bright filtered light. No direct sun.',
+      water: 'Keep soil slightly moist at all times (not soggy).',
+      humidity: 'Very high (70-90%). Essential: humidifier or terrarium.',
+      soil: 'Very airy: sphagnum moss + perlite + bark + charcoal.',
       tips: [
-        'Agua destilada/lluvia obligatoria (sensibles a cloro/cal)',
-        'No dejes que el sustrato se seque del todo',
-        'Evita corrientes de aire frío',
-        'Rocía hojas solo si hay buena ventilación'
+        'Distilled/rain water is mandatory (sensitive to chlorine/calcium)',
+        'Do not let the soil dry out completely',
+        'Avoid cold drafts',
+        'Mist leaves only if there is good ventilation'
       ]
     }
   },
   {
     id: 'carnivorous',
-    label: 'Plantas Carnívoras',
+    label: 'Carnivorous Plants',
     image: `${base}img/Darlingtonia.jpg`,
-    intro: 'Crecen en suelos pobres en nutrientes. Capturan insectos para nitrógeno.',
+    intro: 'They grow in nutrient-poor soils. They capture insects for nitrogen.',
     specs: {
-      light: 'Sol directo 6-8h/día (excepto Pinguicula/Drosera: media).',
-      water: 'Bandeja con agua destilada/lluvia 2-3cm constante. NUNCA agua grifo.',
-      humidity: 'Alta (60-80%). Bandeja de agua la mantiene.',
-      soil: 'Turba rubia 100% o turba + perlita (1:1). Cero fertilizante/compost.',
+      light: 'Direct sun 6-8h/day (except Pinguicula/Drosera: medium).',
+      water: 'Tray with distilled/rain water 1-2 inches constant. NEVER tap water.',
+      humidity: 'High (60-80%). The water tray maintains it.',
+      soil: '100% peat moss or peat + perlite (1:1). Zero fertilizer/compost.',
       tips: [
-        'No las alimentes a mano (capturan solas)',
-        'No fertilices NUNCA (quema raíces)',
-        'Hibernación fría obligatoria (Sarracenia, Dionaea, Darlingtonia)',
-        'Corta flores para ahorrar energía'
+        'Do not feed them by hand (they capture on their own)',
+        'NEVER fertilize (it burns roots)',
+        'Cold dormancy is mandatory (Sarracenia, Dionaea, Darlingtonia)',
+        'Cut flowers to save energy'
       ]
     }
   },
   {
     id: 'airplants',
-    label: 'Plantas de Aire (Tillandsias)',
+    label: 'Air Plants (Tillandsias)',
     image: `${base}img/Tillandsia.jpg`,
-    intro: 'Epífitas sin raíces funcionales. Absorben agua/nutrientes por tricomas en hojas.',
+    intro: 'Epiphytes with no functional roots. They absorb water/nutrients through trichomes on leaves.',
     specs: {
-      light: 'Luz brillante indirecta. Toleran algo de sol mañana/tarde.',
-      water: 'Sumersión 20-30min 1-2/semana + sacudir exceso. Secar boca abajo 4h.',
-      humidity: 'Media-alta (50-70%). Buena circulación de aire crítica.',
-      soil: 'NINGUNO. Montar en madera, corcho, conchas, cristales.',
+      light: 'Bright indirect light. They tolerate some morning/evening sun.',
+      water: 'Submerge for 20-30 min 1-2 times/week + shake off excess. Dry upside down for 4h.',
+      humidity: 'Medium-high (50-70%). Good air circulation is critical.',
+      soil: 'NONE. Mount on wood, cork, shells, crystals.',
       tips: [
-        'Después de regar: SECAR COMPLETAMENTE (evita pudrición central)',
-        'Fertiliza 1/mes en agua de riego (bromeliad fertilizer 1/4 dosis)',
-        'Florecen 1 vez en vida → producen hijuelos (pups)',
-        'Evita cobre/herramientas metálicas (tóxico)'
+        'After watering: DRY COMPLETELY (prevents central rot)',
+        'Fertilize 1/month in watering water (bromeliad fertilizer 1/4 dose)',
+        'They bloom once in a lifetime → produce pups',
+        'Avoid copper/metal tools (toxic)'
       ]
     }
   }

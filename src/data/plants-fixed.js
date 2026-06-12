@@ -20,34 +20,34 @@ function getBadge(index, price) {
 
 const rawPlants = [
   // INDOOR
-  { id: 'monstera-deliciosa', title: 'Monstera Deliciosa', price: 24, category: 'indoor', imgFile: 'monstera.jpg', description: 'La Monstera Deliciosa es una planta de interior icónica con sus hojas perforadas características. Fácil de cuidar y de rápido crecimiento.' },
-  { id: 'sansevieria-trifasciata', title: 'Sansevieria Trifasciata', price: 25, category: 'indoor', imgFile: 'sansevieria.jpg', description: 'La Lengua de Suegra purifica el aire y sobrevive en condiciones extremas. Ideal para principiantes.' },
-  { id: 'hoya-carnosa', title: 'Hoya Carnosa', price: 31, category: 'indoor', imgFile: 'hoya-carnosa.jpg', description: 'La Planta de Cera produce flores estrelladas fragantes. Trepadora de lento crecimiento.' },
-  { id: 'philodendron', title: 'Philodendron', price: 26, category: 'indoor', imgFile: 'philodendrom.jpeg', description: 'Un clásico de interior, muy adaptable y de hojas verdes brillantes que aportan vida a cualquier espacio.' },
-  { id: 'alocasia-polly', title: 'Alocasia Polly', price: 23, category: 'indoor', imgFile: 'Alocasia-Polly.jpg', description: 'La Máscara Africana tiene hojas oscuras con venas blancas dramáticas. Requiere humedad alta.' },
-  { id: 'calathea-musaica', title: 'Calathea Musaica', price: 34, category: 'indoor', imgFile: 'Calathea-Musaica.jpg', description: 'Sus hojas presentan un patrón que recuerda a un mosaico o red. Requiere buena humedad.' },
-  { id: 'dracaena-marginata', title: 'Dracaena Marginata', price: 22, category: 'indoor', imgFile: 'Dracaena.jpg', description: 'El Dragón de Madagascar tiene tallos delgados y hojas estrechas con bordes rojos.' },
-  { id: 'nephrolepis-exaltata', title: 'Helecho de Boston', price: 22, category: 'indoor', imgFile: 'Helecho-Boston.jpg', description: 'El Helecho clásico de frondas arqueadas y plumosas. Excelente purificador de aire.' },
-  { id: 'bonsai', title: 'Bonsái', price: 65, category: 'indoor', imgFile: 'bonzais.jpg', description: 'Un árbol miniatura cultivado con técnicas milenarias. Ideal para contemplación y cuidado detallado.' },
+  { id: 'monstera-deliciosa', title: 'Monstera Deliciosa', price: 24, category: 'indoor', imgFile: 'monstera.jpg', description: 'The Monstera Deliciosa is an iconic indoor plant with characteristic perforated leaves. Easy to care for and fast growing.' },
+  { id: 'sansevieria-trifasciata', title: 'Snake Plant', price: 25, category: 'indoor', imgFile: 'sansevieria.jpg', description: 'The Snake Plant purifies the air and survives in extreme conditions. Ideal for beginners.' },
+  { id: 'hoya-carnosa', title: 'Wax Plant', price: 31, category: 'indoor', imgFile: 'hoya-carnosa.jpg', description: 'The Wax Plant produces fragrant star-shaped flowers. Slow-growing climber.' },
+  { id: 'philodendron', title: 'Philodendron', price: 26, category: 'indoor', imgFile: 'philodendrom.jpeg', description: 'An indoor classic, highly adaptable with bright green leaves that bring life to any space.' },
+  { id: 'alocasia-polly', title: 'Alocasia Polly', price: 23, category: 'indoor', imgFile: 'Alocasia-Polly.jpg', description: 'The African Mask has dark leaves with dramatic white veins. Requires high humidity.' },
+  { id: 'calathea-musaica', title: 'Calathea Musaica', price: 34, category: 'indoor', imgFile: 'Calathea-Musaica.jpg', description: 'Its leaves feature a pattern reminiscent of a mosaic or net. Requires good humidity.' },
+  { id: 'dracaena-marginata', title: 'Dracaena Marginata', price: 22, category: 'indoor', imgFile: 'Dracaena.jpg', description: 'The Madagascar Dragon Tree has slender stems and narrow leaves with red edges.' },
+  { id: 'nephrolepis-exaltata', title: 'Boston Fern', price: 22, category: 'indoor', imgFile: 'Helecho-Boston.jpg', description: 'The classic fern with arching, feathery fronds. Excellent air purifier.' },
+  { id: 'bonsai', title: 'Bonsai', price: 65, category: 'indoor', imgFile: 'bonzais.jpg', description: 'A miniature tree cultivated with ancient techniques. Ideal for contemplation and detailed care.' },
 
   // SUCCULENTS
-  { id: 'fockea-edulis', title: 'Fockea Edulis', price: 45, category: 'succulents', imgFile: 'Fockea.jpg', description: 'Una suculenta caudiciforme inusual con una base gruesa e hinchada que almacena agua.' },
-  { id: 'aloe-aristata', title: 'Aloe Aristata', price: 18, category: 'succulents', imgFile: 'Aloe-aristata.jpg', description: 'Rosetas compactas de hojas verde oscuro con protuberancias blancas. Fácil mantenimiento.' },
-  { id: 'haworthia-fasciata', title: 'Haworthia Fasciata', price: 44, category: 'succulents', imgFile: 'Haworthia.jpg', description: 'La Planta Cebra tiene rayas blancas horizontales y tolera mejor la sombra que otras suculentas.' },
-  { id: 'euphorbia-tirucalli', title: 'Euphorbia Tirucalli', price: 31, category: 'succulents', imgFile: 'Euphorbia-tirucalli.jpg', description: 'El Cactus Lápiz crece en tallos cilíndricos ramificados y carece de hojas evidentes.' },
-  { id: 'sedum-morganianum', title: 'Sedum Morganianum', price: 37, category: 'succulents', imgFile: 'Sedum.jpg', description: 'La Cola de Burro tiene hojas carnosas colgantes. Manipular con cuidado para no desprenderlas.' },
+  { id: 'fockea-edulis', title: 'Fockea Edulis', price: 45, category: 'succulents', imgFile: 'Fockea.jpg', description: 'An unusual caudiciform succulent with a thick, swollen base that stores water.' },
+  { id: 'aloe-aristata', title: 'Aloe Aristata', price: 18, category: 'succulents', imgFile: 'Aloe-aristata.jpg', description: 'Compact rosettes of dark green leaves with white bumps. Easy maintenance.' },
+  { id: 'haworthia-fasciata', title: 'Zebra Plant', price: 44, category: 'succulents', imgFile: 'Haworthia.jpg', description: 'The Zebra Plant has white horizontal stripes and tolerates shade better than other succulents.' },
+  { id: 'euphorbia-tirucalli', title: 'Pencil Cactus', price: 31, category: 'succulents', imgFile: 'Euphorbia-tirucalli.jpg', description: 'The Pencil Cactus grows in branching cylindrical stems and lacks obvious leaves.' },
+  { id: 'sedum-morganianum', title: 'Burro\'s Tail', price: 37, category: 'succulents', imgFile: 'Sedum.jpg', description: 'The Burro\'s Tail has fleshy trailing leaves. Handle with care so they don\'t fall off.' },
 
   // TROPICAL
-  { id: 'maranta-leuconeura', title: 'Maranta Leuconeura', price: 21, category: 'tropical', imgFile: 'maranta-lima-naranja.jpg', description: 'La Planta de Oración pliega sus hojas por la noche. Muestra patrones únicos en el follaje.' },
-  { id: 'syngonium-rosa', title: 'Syngonium Rosa', price: 32, category: 'tropical', imgFile: 'syngonium-rosa.jpg', description: 'Hermosa variedad de Punta de Flecha con tonalidades rosadas en sus hojas.' },
-  { id: 'begonia-amphioxus', title: 'Begonia Amphioxus', price: 53, category: 'tropical', imgFile: 'Begonia-Amphioxus.jpg', description: 'De hojas alargadas y con puntos distintivos, esta especie prefiere ambientes de terrario.' },
-  { id: 'tacca-chantrieri', title: 'Tacca Chantrieri', price: 48, category: 'tropical', imgFile: 'Tacca-chantrieri.jpg', description: 'La Flor Murciélago tiene brácteas oscuras impresionantes. Es una belleza exótica y rara.' },
-  { id: 'tillandsia', title: 'Tillandsia', price: 18, category: 'tropical', imgFile: 'Tillandsia.jpg', description: 'Planta de aire que no necesita sustrato. Absorbe nutrientes a través de sus hojas.' },
-  { id: 'monstera-borsigiana', title: 'Monstera Borsigiana', price: 45, category: 'tropical', imgFile: 'Monstera-Borsigiana.jpg', description: 'Variante trepadora más rápida y compacta que la deliciosa tradicional, ideal para tutores.' },
+  { id: 'maranta-leuconeura', title: 'Prayer Plant', price: 21, category: 'tropical', imgFile: 'maranta-lima-naranja.jpg', description: 'The Prayer Plant folds its leaves at night. Shows unique patterns on the foliage.' },
+  { id: 'syngonium-rosa', title: 'Pink Syngonium', price: 32, category: 'tropical', imgFile: 'syngonium-rosa.jpg', description: 'Beautiful Arrowhead variety with pink hues on its leaves.' },
+  { id: 'begonia-amphioxus', title: 'Begonia Amphioxus', price: 53, category: 'tropical', imgFile: 'Begonia-Amphioxus.jpg', description: 'With elongated leaves and distinctive spots, this species prefers terrarium environments.' },
+  { id: 'tacca-chantrieri', title: 'Bat Flower', price: 48, category: 'tropical', imgFile: 'Tacca-chantrieri.jpg', description: 'The Bat Flower has impressive dark bracts. It is an exotic and rare beauty.' },
+  { id: 'tillandsia', title: 'Air Plant', price: 18, category: 'tropical', imgFile: 'Tillandsia.jpg', description: 'Air plant that needs no soil. Absorbs nutrients through its leaves.' },
+  { id: 'monstera-borsigiana', title: 'Monstera Borsigiana', price: 45, category: 'tropical', imgFile: 'Monstera-Borsigiana.jpg', description: 'Faster climbing and more compact variant than the traditional deliciosa, ideal for moss poles.' },
 
   // CARNIVOROUS
-  { id: 'darlingtonia-californica', title: 'Darlingtonia Californica', price: 55, category: 'carnivorous', imgFile: 'Darlingtonia.jpg', description: 'La Planta Cobra tiene trampas que recuerdan a una serpiente a punto de atacar. Única en su género.' },
-  { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Conocida por tener las trampas tipo jarra más grandes del mundo. Especie fascinante.' }
+  { id: 'darlingtonia-californica', title: 'Cobra Lily', price: 55, category: 'carnivorous', imgFile: 'Darlingtonia.jpg', description: 'The Cobra Plant has traps reminiscent of a snake about to strike. Unique in its genus.' },
+  { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' }
 ];
 
 export const plants = rawPlants.map((p, i) => {
@@ -73,9 +73,9 @@ export function getPlantsByCategory(category) {
 }
 
 export const categories = [
-  { id: 'all', label: 'Todas', count: plants.length },
-  { id: 'indoor', label: 'Interior', count: plants.filter(p => p.category === 'indoor').length },
-  { id: 'succulents', label: 'Suculentas', count: plants.filter(p => p.category === 'succulents').length },
-  { id: 'tropical', label: 'Tropicales', count: plants.filter(p => p.category === 'tropical').length },
-  { id: 'carnivorous', label: 'Carnívoras', count: plants.filter(p => p.category === 'carnivorous').length }
+  { id: 'all', label: 'All', count: plants.length },
+  { id: 'indoor', label: 'Indoor', count: plants.filter(p => p.category === 'indoor').length },
+  { id: 'succulents', label: 'Succulents', count: plants.filter(p => p.category === 'succulents').length },
+  { id: 'tropical', label: 'Tropical', count: plants.filter(p => p.category === 'tropical').length },
+  { id: 'carnivorous', label: 'Carnivorous', count: plants.filter(p => p.category === 'carnivorous').length }
 ];

@@ -12,14 +12,14 @@ export default function Home() {
         className="hero"
         style={{
           background:
-            `linear-gradient(rgba(255, 250, 246, 0.3), rgba(255, 250, 246, 0.8)), url('${base}img/sala-jardin.jpg') center/cover no-repeat`,
+            `linear-gradient(to bottom, rgba(47, 79, 62, 0.3), rgba(47, 79, 62, 0.6)), url('${base}img/sala-jardin.jpg') center/cover no-repeat`,
         }}
       >
         <div className="container">
-          <h1 style={{ color: "var(--text-primary)" }}>
+          <h1 style={{ color: "#ffffff", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             Welcome to Trailing Dreams
           </h1>
-          <p style={{ color: "var(--text-secondary)", fontWeight: "bold" }}>
+          <p style={{ color: "#f0f0f0", fontWeight: "500", fontSize: "1.2rem", textShadow: "0 2px 8px rgba(0,0,0,0.4)", maxWidth: "600px", margin: "0 auto 30px" }}>
             We connect your home with nature. Specialists in unique species,
             exotic plants, and tools for their daily care.
           </p>

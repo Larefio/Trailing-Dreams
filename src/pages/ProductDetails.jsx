@@ -41,15 +41,15 @@ export default function ProductDetails() {
           <div style={{ display: 'flex', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '14px' }}>
               <Sun size={18} color="var(--accent-terracotta)" />
-              <span>{plant.light === 'direct' ? 'Sol directo' : plant.light === 'bright-indirect' ? 'Luz brillante indirecta' : 'Luz media/baja'}</span>
+              <span>{plant.light === 'direct' ? 'Direct sun' : plant.light === 'bright-indirect' ? 'Bright indirect light' : 'Medium/low light'}</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '14px' }}>
               <Droplet size={18} color="var(--accent-terracotta)" />
-              <span>{plant.water === 'frequent' ? 'Riego frecuente' : plant.water === 'weekly' ? 'Riego semanal' : 'Riego quincenal'}</span>
+              <span>{plant.water === 'frequent' ? 'Frequent watering' : plant.water === 'weekly' ? 'Weekly watering' : 'Bi-weekly watering'}</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', fontSize: '14px' }}>
               <Heart size={18} color={plant.petSafe ? 'var(--accent-terracotta)' : 'var(--text-secondary)'} />
-              <span>{plant.petSafe ? 'Pet-friendly' : 'Tóxica para mascotas'}</span>
+              <span>{plant.petSafe ? 'Pet-friendly' : 'Toxic to pets'}</span>
             </div>
           </div>
 
