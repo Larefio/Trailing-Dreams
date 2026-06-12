@@ -629,8 +629,9 @@ img {
 .product-image-wrapper img {
   width: 100%;
   height: 320px;
-  object-fit: cover;
-  background: #ffffff;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: multiply;
   display: block;
   transition: transform 0.5s ease;
 }
