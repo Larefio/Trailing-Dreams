@@ -2698,3 +2698,251 @@ body, html {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(142, 132, 245, 0.4);
 }
+
+/* --- Premium Footer --- */
+.site-footer-premium {
+  margin-top: 100px;
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(146, 188, 161, 0.2);
+}
+
+.footer-top {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(146, 188, 161, 0.2);
+  background: linear-gradient(to right, rgba(146, 188, 161, 0.05), rgba(211, 124, 89, 0.05));
+}
+
+.footer-newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.newsletter-text h3 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid rgba(146, 188, 161, 0.4);
+  border-radius: 30px;
+  outline: none;
+  font-family: inherit;
+}
+
+.btn-newsletter {
+  background: var(--accent-olive);
+  color: white;
+  border: none;
+  padding: 0 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-newsletter:hover {
+  background: var(--text-primary);
+}
+
+.footer-main {
+  padding: 80px 0 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 50px;
+}
+
+.footer-logo {
+  font-size: 26px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-desc {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(146, 188, 161, 0.2);
+  color: var(--accent-olive);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent-terracotta);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+}
+
+.footer-links ul, .footer-contact ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-terracotta);
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  line-height: 1.6;
+}
+
+.contact-icon {
+  color: var(--accent-terracotta);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  padding: 30px 0;
+  border-top: 1px solid rgba(146, 188, 161, 0.2);
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-bottom-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-newsletter {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --- Premium Terms & Conditions Page --- */
+.terms-page-premium {
+  padding: 160px 20px 100px;
+  background-color: var(--bg-body);
+}
+
+.terms-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.terms-header h1 {
+  font-size: 48px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.terms-header p {
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-section {
+  background: white;
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  margin-bottom: 40px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.terms-section:hover {
+  transform: translateY(-5px);
+}
+
+.terms-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.terms-section h2 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.terms-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
