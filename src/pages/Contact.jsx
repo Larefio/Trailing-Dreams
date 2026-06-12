@@ -1,3 +1,4 @@
+import { Mail, MessageCircle, MapPin } from 'lucide-react';
 const base = import.meta.env.BASE_URL;
 
 export default function Contact() {
@@ -12,21 +13,21 @@ export default function Contact() {
 
             <div className="contact-info-list">
               <div className="contact-info-row">
-                <span className="info-icon">✉️</span>
+                <span className="info-icon"><Mail size={24} color="var(--accent-lilac)" /></span>
                 <div className="info-text">
                   <strong>Email</strong>
                   <a href="mailto:info@trailingdreams.com">info@trailingdreams.com</a>
                 </div>
               </div>
               <div className="contact-info-row">
-                <span className="info-icon">💬</span>
+                <span className="info-icon"><MessageCircle size={24} color="var(--accent-terracotta)" /></span>
                 <div className="info-text">
                   <strong>WhatsApp</strong>
                   <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">+51 999 999 999</a>
                 </div>
               </div>
               <div className="contact-info-row">
-                <span className="info-icon">📍</span>
+                <span className="info-icon"><MapPin size={24} color="var(--accent-lilac)" /></span>
                 <div className="info-text">
                   <strong>Location</strong>
                   <p>Tyler, Tx</p>

@@ -1,14 +1,28 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { ShoppingBag, Menu, X, Moon, Sun } from 'lucide-react';
 export default function Navbar() {
   const { getCartCount } = useContext(CartContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
     setMenuOpen(false);
-  }, [location]);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <header className="site-header-premium">
       <nav className="navbar-premium">
@@ -33,6 +47,9 @@ export default function Navbar() {
             <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>
           <div className="nav-actions-premium">
+            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Dark Mode">
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <Link to="/cart" className="nav-cart-btn">
               <ShoppingBag size={20} />
               <span>Cart</span>
