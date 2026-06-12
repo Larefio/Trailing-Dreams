@@ -27,10 +27,10 @@ export default function Shop() {
               <button className={`category-btn ${filter === 'succulents' ? 'active' : ''}`} onClick={() => setFilter('succulents')}>Succulents</button>
               <button className={`category-btn ${filter === 'tropical' ? 'active' : ''}`} onClick={() => setFilter('tropical')}>Tropical</button>
               <button className={`category-btn ${filter === 'carnivorous' ? 'active' : ''}`} onClick={() => setFilter('carnivorous')}>Carnivorous</button>
-              <button className={`category-btn ${filter === 'jardineria' ? 'active' : ''}`} onClick={() => setFilter('jardineria')}>Tierras y Sustratos</button>
-              <button className={`category-btn ${filter === 'bases' ? 'active' : ''}`} onClick={() => setFilter('bases')}>Bases para Macetas</button>
-              <button className={`category-btn ${filter === 'riego' ? 'active' : ''}`} onClick={() => setFilter('riego')}>Riego</button>
-              <button className={`category-btn ${filter === 'herramientas' ? 'active' : ''}`} onClick={() => setFilter('herramientas')}>Herramientas</button>
+              <button className={`category-btn ${filter === 'jardineria' ? 'active' : ''}`} onClick={() => setFilter('jardineria')}>Soils & Fertilizers</button>
+              <button className={`category-btn ${filter === 'bases' ? 'active' : ''}`} onClick={() => setFilter('bases')}>Pot Stands</button>
+              <button className={`category-btn ${filter === 'riego' ? 'active' : ''}`} onClick={() => setFilter('riego')}>Watering</button>
+              <button className={`category-btn ${filter === 'herramientas' ? 'active' : ''}`} onClick={() => setFilter('herramientas')}>Garden Tools</button>
             </div>
           </aside>
           <div className="main-content">
