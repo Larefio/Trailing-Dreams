@@ -83,7 +83,7 @@ export default function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundImage: cat.id === "jardineria" 
-                    ? "url('https://promart.vteximg.com.br/arquivos/ids/9975595/105931.jpg?v=639037964693370000')" 
+                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Potting_soil.jpg/500px-Potting_soil.jpg')" 
                     : cat.id === "bases" 
                     ? "url('https://promart.vteximg.com.br/arquivos/ids/9725239/166344.png?v=638996257464930000')" 
                     : cat.id === "riego" 
