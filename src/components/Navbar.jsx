@@ -27,10 +27,10 @@ export default function Navbar() {
         </button>
         <div className={`nav-menu-premium ${menuOpen ? 'open' : ''}`} style={menuOpen ? { right: 0 } : {}}>
           <ul className="nav-links-premium">
-            <li><Link to="/shop" onClick={() => setMenuOpen(false)}>🪴 Shop</Link></li>
-            <li><Link to="/care" onClick={() => setMenuOpen(false)}>✨ Care Guide</Link></li>
-            <li><Link to="/about" onClick={() => setMenuOpen(false)}>💖 About</Link></li>
-            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>💌 Contact</Link></li>
+            <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link></li>
+            <li><Link to="/care" onClick={() => setMenuOpen(false)}>Care Guide</Link></li>
+            <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>
           <div className="nav-actions-premium">
             <Link to="/cart" className="nav-cart-btn">
