@@ -3500,3 +3500,9 @@ body, html {
     background-size: 140vw auto !important;
   }
 }
+
+.desktop-toggle { display: none !important; }
+@media (min-width: 1024px) {
+  .desktop-toggle { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+}

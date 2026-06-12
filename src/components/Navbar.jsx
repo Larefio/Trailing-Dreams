@@ -47,16 +47,19 @@ export default function Navbar() {
               <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
               <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
             </ul>
-            <div className="nav-actions-premium">
+            <div className="nav-actions-premium" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
               <Link to="/cart" className="nav-cart-btn" onClick={() => setMenuOpen(false)}>
                 <ShoppingBag size={20} />
                 <span>Cart</span>
                 {getCartCount() > 0 && <span className="cart-count-badge">{getCartCount()}</span>}
               </Link>
+              <button className="theme-toggle-btn desktop-toggle" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
+                {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+              </button>
             </div>
           </div>
 
-          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', zIndex: 1001 }}>
+          <button className="theme-toggle-btn mobile-toggle" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', zIndex: 1001 }}>
             {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
           </button>
 
