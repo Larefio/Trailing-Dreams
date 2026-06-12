@@ -83,7 +83,7 @@ export default function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundImage: cat.id === "tools" 
-                    ? `url('${base}img/tools-watering-can.png')` 
+                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watering_can.JPG/800px-Watering_can.JPG')" 
                     : `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
                   transition: "transform 0.5s ease",
                 }}

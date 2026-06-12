@@ -51,10 +51,12 @@ const rawPlants = [
   { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' },
 
   // TOOLS & CARE
-  { id: 'felco-2-pruning-shears', title: 'Felco 2 Pruning Shears', price: 65, category: 'tools', imgFile: 'tools-shears.png', description: 'The gold standard in pruning. Classic design with red forged aluminum handles and hardened steel blades.' },
-  { id: 'foxfarm-ocean-forest', title: 'FoxFarm Ocean Forest Soil', price: 25, category: 'tools', imgFile: 'tools-soil.png', description: 'Premium potting soil mixed with earthworm castings, bat guano, and Pacific Northwest sea-going fish and crab meal.' },
-  { id: 'haws-brass-can', title: 'Haws Brass Watering Can', price: 145, category: 'tools', imgFile: 'tools-watering-can.png', description: 'Elegant, timeless, and functional. Solid brass watering can, perfect for indoor plant care.' },
-  { id: 'organic-liquid-fertilizer', title: 'Organic Liquid Fertilizer', price: 18, category: 'tools', imgFile: 'tools-fertilizer.png', description: 'All-natural organic liquid plant food. Provides essential nutrients for lush, green growth.' }
+  { id: 'tierra-preparada-10kg', title: 'Tierra Preparada 4Estaciones (10kg)', price: 15, category: 'tools', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Potting_soil_2.jpg/800px-Potting_soil_2.jpg', description: 'Sustrato ideal para todo tipo de plantas de interior y exterior. Enriquecida con compost.' },
+  { id: 'fertilizante-liquido-hortus', title: 'Fertilizante Líquido Hortus', price: 12, category: 'tools', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Liquid_fertilizer_%281%29.jpg/800px-Liquid_fertilizer_%281%29.jpg', description: 'Nutrientes esenciales para el crecimiento vigoroso de tus plantas. Uso directo en la tierra.' },
+  { id: 'insecticida-garden-clean', title: 'Insecticida Garden Clean (500ml)', price: 19, category: 'tools', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Spray_bottle_2.jpg/800px-Spray_bottle_2.jpg', description: 'Controlador de plagas natural en spray. Seguro para uso en el hogar y efectivo contra pulgones.' },
+  { id: 'base-madera-maceta', title: 'Base de Madera para Maceta', price: 45, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80', description: 'Soporte decorativo de madera resistente, ideal para elevar tus macetas y mejorar la decoración.' },
+  { id: 'regadera-plastico', title: 'Regadera de Plástico (2L)', price: 25, category: 'tools', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watering_can.JPG/800px-Watering_can.JPG', description: 'Regadera clásica y resistente para un riego preciso de tus plantas de interior y exterior.' },
+  { id: 'tijera-podar-truper', title: 'Tijera de Podar de Acero', price: 35, category: 'tools', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pruning_Shears.jpg/800px-Pruning_Shears.jpg', description: 'Herramienta indispensable para mantener tus plantas sanas y con forma.' }
 ];
 
 export const plants = rawPlants.map((p, i) => {
@@ -63,7 +65,7 @@ export const plants = rawPlants.map((p, i) => {
   const specs = getSpecs(p.category);
   return {
     ...p,
-    image: `${base}img/${p.imgFile}`,
+    image: p.imgFile.startsWith('http') ? p.imgFile : `${base}img/${p.imgFile}`,
     light: specs.light,
     water: specs.water,
     petSafe: specs.petSafe,
