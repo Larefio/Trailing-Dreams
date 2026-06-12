@@ -17,7 +17,7 @@ export default function Home() {
       >
         <div className="container">
           <h1 style={{ color: "#ffffff", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
-            Welcome to Trailing Dreams
+            Welcome to <span className="brand-highlight">TRAILING DREAMS</span>
           </h1>
           <p style={{ color: "#f0f0f0", fontWeight: "500", fontSize: "1.2rem", textShadow: "0 2px 8px rgba(0,0,0,0.4)", maxWidth: "600px", margin: "0 auto 30px" }}>
             We connect your home with nature. Specialists in unique species,

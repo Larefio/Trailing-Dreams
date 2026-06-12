@@ -8,6 +8,14 @@
   --accent-terracotta-hover: #FF9EAB;
   --accent-olive: #666699;
   --accent-olive-hover: #B3B3E6;
+  --accent-lilac: #A388EE;
+}
+
+.brand-highlight {
+  color: var(--accent-lilac);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(163, 136, 238, 0.4);
 }
 
 * {
