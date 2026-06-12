@@ -82,8 +82,14 @@ export default function Home() {
                   bottom: 0,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  backgroundImage: cat.id === "tools" 
+                  backgroundImage: cat.id === "jardineria" 
+                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Potting_soil_2.jpg/800px-Potting_soil_2.jpg')" 
+                    : cat.id === "bases" 
+                    ? "url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80')" 
+                    : cat.id === "riego" 
                     ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watering_can.JPG/800px-Watering_can.JPG')" 
+                    : cat.id === "herramientas" 
+                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pruning_Shears.jpg/800px-Pruning_Shears.jpg')" 
                     : `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
                   transition: "transform 0.5s ease",
                 }}
