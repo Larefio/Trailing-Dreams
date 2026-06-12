@@ -51,10 +51,10 @@ const rawPlants = [
   { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' },
 
   // TOOLS & CARE
-  { id: 'felco-2-pruning-shears', title: 'Felco 2 Pruning Shears', price: 65, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1416879598555-220bf9bbdd4b?w=600&q=80', description: 'The gold standard in pruning. Classic design with red forged aluminum handles and hardened steel blades.' },
-  { id: 'foxfarm-ocean-forest', title: 'FoxFarm Ocean Forest Soil', price: 25, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1444684414006-03a088667a4e?w=600&q=80', description: 'Premium potting soil mixed with earthworm castings, bat guano, and Pacific Northwest sea-going fish and crab meal.' },
-  { id: 'haws-brass-can', title: 'Haws Brass Watering Can', price: 145, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1592424001806-258055cd9139?w=600&q=80', description: 'Elegant, timeless, and functional. Solid brass watering can, perfect for indoor plant care.' },
-  { id: 'organic-liquid-fertilizer', title: 'Organic Liquid Fertilizer', price: 18, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=600&q=80', description: 'All-natural organic liquid plant food. Provides essential nutrients for lush, green growth.' }
+  { id: 'felco-2-pruning-shears', title: 'Felco 2 Pruning Shears', price: 65, category: 'tools', imgFile: 'tools-shears.png', description: 'The gold standard in pruning. Classic design with red forged aluminum handles and hardened steel blades.' },
+  { id: 'foxfarm-ocean-forest', title: 'FoxFarm Ocean Forest Soil', price: 25, category: 'tools', imgFile: 'tools-soil.png', description: 'Premium potting soil mixed with earthworm castings, bat guano, and Pacific Northwest sea-going fish and crab meal.' },
+  { id: 'haws-brass-can', title: 'Haws Brass Watering Can', price: 145, category: 'tools', imgFile: 'tools-watering-can.png', description: 'Elegant, timeless, and functional. Solid brass watering can, perfect for indoor plant care.' },
+  { id: 'organic-liquid-fertilizer', title: 'Organic Liquid Fertilizer', price: 18, category: 'tools', imgFile: 'tools-fertilizer.png', description: 'All-natural organic liquid plant food. Provides essential nutrients for lush, green growth.' }
 ];
 
 export const plants = rawPlants.map((p, i) => {
@@ -63,7 +63,7 @@ export const plants = rawPlants.map((p, i) => {
   const specs = getSpecs(p.category);
   return {
     ...p,
-    image: p.imgFile.startsWith('http') ? p.imgFile : `${base}img/${p.imgFile}`,
+    image: `${base}img/${p.imgFile}`,
     light: specs.light,
     water: specs.water,
     petSafe: specs.petSafe,
