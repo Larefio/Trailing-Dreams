@@ -5,8 +5,8 @@ export default function CareGuide() {
   return (
     <main className="care-page-premium">
       <section className="care-hero">
-        <h1>Guía de Cuidados</h1>
-        <p>Aprende a mantener tus plantas felices, saludables y llenas de vida con nuestros consejos expertos.</p>
+        <h1>Care Guides</h1>
+        <p>Learn how to keep your plants happy, healthy and full of life with our expert advice.</p>
       </section>
       <section className="care-zigzag-wrapper container">
         {careGuides.map((guide, i) => (

@@ -16,7 +16,7 @@ export default function CareSection({ guide, reverse }) {
               <Sun size={20} color="#D37C59" />
             </div>
             <div>
-              <h4>Luz</h4>
+              <h4>Light</h4>
               <p>{guide.specs.light}</p>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function CareSection({ guide, reverse }) {
               <Droplets size={20} color="#D37C59" />
             </div>
             <div>
-              <h4>Riego</h4>
+              <h4>Water</h4>
               <p>{guide.specs.water}</p>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function CareSection({ guide, reverse }) {
               <Wind size={20} color="#D37C59" />
             </div>
             <div>
-              <h4>Humedad</h4>
+              <h4>Humidity</h4>
               <p>{guide.specs.humidity}</p>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function CareSection({ guide, reverse }) {
               <Shovel size={20} color="#D37C59" />
             </div>
             <div>
-              <h4>Sustrato</h4>
+              <h4>Soil</h4>
               <p>{guide.specs.soil}</p>
             </div>
           </div>
