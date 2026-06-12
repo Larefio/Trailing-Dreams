@@ -83,13 +83,13 @@ export default function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundImage: cat.id === "jardineria" 
-                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Potting_soil_2.jpg/800px-Potting_soil_2.jpg')" 
+                    ? "url('https://promart.vteximg.com.br/arquivos/ids/9975595/105931.jpg?v=639037964693370000')" 
                     : cat.id === "bases" 
-                    ? "url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80')" 
+                    ? "url('https://promart.vteximg.com.br/arquivos/ids/9725239/166344.png?v=638996257464930000')" 
                     : cat.id === "riego" 
-                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watering_can.JPG/800px-Watering_can.JPG')" 
+                    ? "url('https://promart.vteximg.com.br/arquivos/ids/9367120/162001.jpg?v=638939201854500000')" 
                     : cat.id === "herramientas" 
-                    ? "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Pruning_Shears.jpg/800px-Pruning_Shears.jpg')" 
+                    ? "url('https://promart.vteximg.com.br/arquivos/ids/10739894/imageUrl_1.jpg?v=639149117585100000')" 
                     : `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
                   transition: "transform 0.5s ease",
                 }}
