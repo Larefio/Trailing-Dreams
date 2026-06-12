@@ -3172,44 +3172,50 @@ body, html {
 }
 
 
+
 /* CUTE MOBILE MENU OVERLAY */
-.nav-menu-premium {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(20px) !important;
-  border-left: 2px solid rgba(255, 182, 193, 0.3) !important;
-  box-shadow: -15px 0 40px rgba(163, 136, 238, 0.15) !important;
-  border-radius: 40px 0 0 40px !important;
-}
-
-.nav-links-premium {
-  gap: 20px !important;
-  margin-top: 10px !important;
-}
-
-.nav-links-premium a {
-  font-size: 22px !important;
-  font-weight: 800 !important;
-  color: #4A4A7A !important; /* Soft dark violet/blue */
-  text-transform: capitalize !important;
-  letter-spacing: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 15px !important;
-  padding: 15px 25px !important;
-  border-radius: 24px !important;
-  background: rgba(240, 248, 255, 0.8) !important; /* Light blue */
-  transition: all 0.3s ease !important;
-  border: 1px solid rgba(163, 136, 238, 0.2) !important;
-}
-
-.nav-links-premium a:hover {
-  background: rgba(255, 182, 193, 0.25) !important; /* Soft pink */
-  color: var(--accent-terracotta) !important;
-  transform: translateX(10px) !important;
-  border-color: rgba(255, 182, 193, 0.5) !important;
-}
-
 @media (max-width: 768px) {
+  .nav-menu-premium {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-left: 2px solid rgba(255, 182, 193, 0.3) !important;
+    box-shadow: -15px 0 40px rgba(163, 136, 238, 0.15) !important;
+    border-radius: 40px 0 0 40px !important;
+  }
+
+  .nav-links-premium {
+    gap: 20px !important;
+    margin-top: 10px !important;
+  }
+
+  .nav-links-premium a {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #4A4A7A !important;
+    text-transform: capitalize !important;
+    letter-spacing: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 25px !important;
+    border-radius: 24px !important;
+    background: rgba(240, 248, 255, 0.8) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(163, 136, 238, 0.2) !important;
+  }
+
+  .nav-links-premium a:hover {
+    background: rgba(255, 182, 193, 0.25) !important;
+    color: var(--accent-terracotta) !important;
+    transform: translateX(10px) !important;
+    border-color: rgba(255, 182, 193, 0.5) !important;
+  }
+  
+  .nav-links-premium li:nth-child(1) a::before { content: '🪴'; }
+  .nav-links-premium li:nth-child(2) a::before { content: '✨'; }
+  .nav-links-premium li:nth-child(3) a::before { content: '💖'; }
+  .nav-links-premium li:nth-child(4) a::before { content: '💌'; }
+
   .nav-menu-premium .nav-cart-btn {
     width: 100% !important;
     justify-content: center !important;
@@ -3224,7 +3230,6 @@ body, html {
     color: white !important;
   }
 }
-
 
 /* HIDE HAMBURGER ON DESKTOP */
 @media (min-width: 769px) {
