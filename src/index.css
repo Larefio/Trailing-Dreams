@@ -3224,3 +3224,11 @@ body, html {
     color: white !important;
   }
 }
+
+
+/* HIDE HAMBURGER ON DESKTOP */
+@media (min-width: 769px) {
+  .menu-button-premium {
+    display: none !important;
+  }
+}
