@@ -1,20 +1,20 @@
-import { useState, useContext, useMemo } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Heart } from 'lucide-react';
-import { plantDatabase } from '../data/plants';
+import { plants } from '../data/plants-fixed';
 import { CartContext } from '../context/CartContext';
+
 export default function Shop() {
   const { addToCart, toggleWishlist, wishlist } = useContext(CartContext);
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
-  const plants = useMemo(() => {
-    return Object.entries(plantDatabase).map(([id, plant]) => ({ id, ...plant }));
-  }, []);
+
   const filteredPlants = plants.filter(plant => {
     const matchesFilter = filter === 'all' || plant.category === filter;
     const matchesSearch = plant.title.toLowerCase().includes(search.toLowerCase());
     return matchesFilter && matchesSearch;
   });
+
   return (
     <main className="shop-page">
       <div className="container">
@@ -60,7 +60,7 @@ export default function Shop() {
                         <Heart size={20} />
                       </button>
                       <Link to={`/product/${plant.id}`}>
-                        <img src={plant.img} alt={plant.title} loading="lazy" />
+                        <img src={plant.image} alt={plant.title} loading="lazy" />
                       </Link>
                       <div className="product-overlay">
                         <button type="button" className="shop-add-btn-premium" onClick={() => addToCart(plant)}>
