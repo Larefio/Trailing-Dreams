@@ -82,7 +82,9 @@ export default function Home() {
                   bottom: 0,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  backgroundImage: `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
+                  backgroundImage: cat.id === "tools" 
+                    ? "url('https://images.unsplash.com/photo-1592424001806-258055cd9139?w=600&q=80')" 
+                    : `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
                   transition: "transform 0.5s ease",
                 }}
               />

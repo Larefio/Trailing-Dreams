@@ -6,7 +6,8 @@ function getSpecs(category) {
     indoor: { light: 'bright-indirect', water: 'weekly', petSafe: false },
     succulents: { light: 'direct', water: 'biweekly', petSafe: true },
     tropical: { light: 'bright-indirect', water: 'frequent', petSafe: false },
-    carnivorous: { light: 'direct', water: 'frequent', petSafe: true }
+    carnivorous: { light: 'direct', water: 'frequent', petSafe: true },
+    tools: { light: 'n/a', water: 'n/a', petSafe: true }
   };
   return specsBase[category] || specsBase.indoor;
 }
@@ -47,7 +48,13 @@ const rawPlants = [
 
   // CARNIVOROUS
   { id: 'darlingtonia-californica', title: 'Cobra Lily', price: 55, category: 'carnivorous', imgFile: 'Darlingtonia.jpg', description: 'The Cobra Plant has traps reminiscent of a snake about to strike. Unique in its genus.' },
-  { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' }
+  { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' },
+
+  // TOOLS & CARE
+  { id: 'felco-2-pruning-shears', title: 'Felco 2 Pruning Shears', price: 65, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1416879598555-220bf9bbdd4b?w=600&q=80', description: 'The gold standard in pruning. Classic design with red forged aluminum handles and hardened steel blades.' },
+  { id: 'foxfarm-ocean-forest', title: 'FoxFarm Ocean Forest Soil', price: 25, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1444684414006-03a088667a4e?w=600&q=80', description: 'Premium potting soil mixed with earthworm castings, bat guano, and Pacific Northwest sea-going fish and crab meal.' },
+  { id: 'haws-brass-can', title: 'Haws Brass Watering Can', price: 145, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1592424001806-258055cd9139?w=600&q=80', description: 'Elegant, timeless, and functional. Solid brass watering can, perfect for indoor plant care.' },
+  { id: 'organic-liquid-fertilizer', title: 'Organic Liquid Fertilizer', price: 18, category: 'tools', imgFile: 'https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=600&q=80', description: 'All-natural organic liquid plant food. Provides essential nutrients for lush, green growth.' }
 ];
 
 export const plants = rawPlants.map((p, i) => {
@@ -56,7 +63,7 @@ export const plants = rawPlants.map((p, i) => {
   const specs = getSpecs(p.category);
   return {
     ...p,
-    image: `${base}img/${p.imgFile}`,
+    image: p.imgFile.startsWith('http') ? p.imgFile : `${base}img/${p.imgFile}`,
     light: specs.light,
     water: specs.water,
     petSafe: specs.petSafe,
@@ -77,5 +84,6 @@ export const categories = [
   { id: 'indoor', label: 'Indoor', count: plants.filter(p => p.category === 'indoor').length },
   { id: 'succulents', label: 'Succulents', count: plants.filter(p => p.category === 'succulents').length },
   { id: 'tropical', label: 'Tropical', count: plants.filter(p => p.category === 'tropical').length },
-  { id: 'carnivorous', label: 'Carnivorous', count: plants.filter(p => p.category === 'carnivorous').length }
+  { id: 'carnivorous', label: 'Carnivorous', count: plants.filter(p => p.category === 'carnivorous').length },
+  { id: 'tools', label: 'Care & Tools', count: plants.filter(p => p.category === 'tools').length }
 ];

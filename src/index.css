@@ -16,6 +16,19 @@
   font-weight: 800;
   letter-spacing: 1px;
   text-shadow: 0 0 20px rgba(163, 136, 238, 0.4);
+  animation: lilaGlow 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes lilaGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(163, 136, 238, 0.3), 0 0 20px rgba(163, 136, 238, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(163, 136, 238, 0.8), 0 0 40px rgba(163, 136, 238, 0.5);
+    transform: scale(1.02);
+  }
 }
 
 * {

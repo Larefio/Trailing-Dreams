@@ -22,11 +22,12 @@ export default function Shop() {
           <aside className="sidebar">
             <h2 style={{ fontSize: '20px', color: 'var(--text-primary)', marginBottom: '20px' }}>Categories</h2>
             <div className="categories-wrapper">
-              <button className={`category-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All Plants</button>
+              <button className={`category-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All Products</button>
               <button className={`category-btn ${filter === 'indoor' ? 'active' : ''}`} onClick={() => setFilter('indoor')}>Indoor</button>
               <button className={`category-btn ${filter === 'succulents' ? 'active' : ''}`} onClick={() => setFilter('succulents')}>Succulents</button>
               <button className={`category-btn ${filter === 'tropical' ? 'active' : ''}`} onClick={() => setFilter('tropical')}>Tropical</button>
               <button className={`category-btn ${filter === 'carnivorous' ? 'active' : ''}`} onClick={() => setFilter('carnivorous')}>Carnivorous</button>
+              <button className={`category-btn ${filter === 'tools' ? 'active' : ''}`} onClick={() => setFilter('tools')}>Care & Tools</button>
             </div>
           </aside>
           <div className="main-content">
