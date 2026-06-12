@@ -3428,7 +3428,7 @@ body, html {
 /* CUTE MOBILE MENU OVERLAY */
 @media (max-width: 768px) {
   .nav-menu-premium {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: var(--bg-glass) !important;
     backdrop-filter: blur(20px) !important;
     border-left: 2px solid rgba(255, 182, 193, 0.3) !important;
     box-shadow: -15px 0 40px rgba(163, 136, 238, 0.15) !important;
@@ -3505,4 +3505,14 @@ body, html {
 @media (min-width: 1024px) {
   .desktop-toggle { display: flex !important; }
   .mobile-toggle { display: none !important; }
+}
+
+/* NEON CARDS IN DARK MODE */
+body.dark .shop-page .product {
+  box-shadow: 0 0 15px rgba(163, 136, 238, 0.15), 0 0 5px rgba(163, 136, 238, 0.1) !important;
+  border: 1px solid rgba(163, 136, 238, 0.2) !important;
+}
+body.dark .shop-page .product:hover {
+  box-shadow: 0 0 25px rgba(163, 136, 238, 0.4), 0 0 10px rgba(163, 136, 238, 0.2) !important;
+  border-color: rgba(163, 136, 238, 0.5) !important;
 }
