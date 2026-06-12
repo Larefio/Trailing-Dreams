@@ -10,7 +10,7 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location]);
 
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -24,6 +24,7 @@ export default function Navbar() {
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
+
   return (
     <header className="site-header-premium">
       <nav className="navbar-premium">
@@ -37,26 +38,31 @@ export default function Navbar() {
             <span className="logo-dreams">Dreams</span>
           </div>
         </Link>
-        <button className="menu-button-premium" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-        <div className={`nav-menu-premium ${menuOpen ? 'open' : ''}`} style={menuOpen ? { right: 0 } : {}}>
-          <ul className="nav-links-premium">
-            <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link></li>
-            <li><Link to="/care" onClick={() => setMenuOpen(false)}>Care Guide</Link></li>
-            <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-          </ul>
-          <div className="nav-actions-premium">
-            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', alignItems: 'center' }}>
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <Link to="/cart" className="nav-cart-btn">
-              <ShoppingBag size={20} />
-              <span>Cart</span>
-              {getCartCount() > 0 && <span className="cart-count-badge">{getCartCount()}</span>}
-            </Link>
+        
+        <div className="navbar-right-actions">
+          <div className={`nav-menu-premium ${menuOpen ? 'open' : ''}`}>
+            <ul className="nav-links-premium">
+              <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link></li>
+              <li><Link to="/care" onClick={() => setMenuOpen(false)}>Care Guide</Link></li>
+              <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+              <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+            </ul>
+            <div className="nav-actions-premium">
+              <Link to="/cart" className="nav-cart-btn" onClick={() => setMenuOpen(false)}>
+                <ShoppingBag size={20} />
+                <span>Cart</span>
+                {getCartCount() > 0 && <span className="cart-count-badge">{getCartCount()}</span>}
+              </Link>
+            </div>
           </div>
+
+          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Dark Mode" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', zIndex: 1001 }}>
+            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+          </button>
+
+          <button className="menu-button-premium" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
     </header>

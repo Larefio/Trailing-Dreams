@@ -12,7 +12,7 @@ export default function Home() {
         className="hero"
         style={{
           background:
-            `linear-gradient(to bottom, rgba(47, 79, 62, 0.3), rgba(47, 79, 62, 0.6)), url('${base}img/sala-jardin.jpg') center/cover no-repeat`,
+            `linear-gradient(to bottom, rgba(21, 22, 40, 0.6), rgba(21, 22, 40, 0.8)), url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat`,
         }}
       >
         <div className="container">
