@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { plants, categories } from "../data/plants-fixed";
 
 export default function Home() {
+  const base = import.meta.env.BASE_URL;
   // Categorías con conteo real (excluye "all")
   const displayCategories = categories.filter((c) => c.id !== "all");
 
@@ -11,7 +12,7 @@ export default function Home() {
         className="hero"
         style={{
           background:
-            "linear-gradient(rgba(255, 250, 246, 0.3), rgba(255, 250, 246, 0.8)), url('/img/sala-jardin.jpg') center/cover no-repeat",
+            `linear-gradient(rgba(255, 250, 246, 0.3), rgba(255, 250, 246, 0.8)), url('${base}img/sala-jardin.jpg') center/cover no-repeat`,
         }}
       >
         <div className="container">
@@ -81,7 +82,7 @@ export default function Home() {
                   bottom: 0,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  backgroundImage: `url('/img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
+                  backgroundImage: `url('${base}img/${cat.id === "indoor" ? "monstera" : cat.id === "succulents" ? "Aloe-aristata" : cat.id === "tropical" ? "maranta-lima-naranja" : "Darlingtonia"}.jpg')`,
                   transition: "transform 0.5s ease",
                 }}
               />
