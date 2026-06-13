@@ -56,7 +56,6 @@ export default function Shop() {
                   onChange={(e) => setSearch(e.target.value)}
                   className="search-input"
                   spellCheck={false}
-                  style={{ padding: '16px 26px 16px 50px' }}
                 />
               </div>
             </div>
