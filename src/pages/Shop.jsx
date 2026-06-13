@@ -1,22 +1,34 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Heart } from 'lucide-react';
-import { plants } from '../data/plants-fixed';
+import { motion } from 'framer-motion';
 import { CartContext } from '../context/CartContext';
+import { ProductContext } from '../context/ProductContext';
 
 export default function Shop() {
   const { addToCart, toggleWishlist, wishlist } = useContext(CartContext);
+  const { products, loading } = useContext(ProductContext);
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
 
-  const filteredPlants = plants.filter(plant => {
+  const filteredPlants = products.filter(plant => {
     const matchesFilter = filter === 'all' || plant.category === filter;
     const matchesSearch = plant.title.toLowerCase().includes(search.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 
+  if (loading) {
+    return <main className="shop-page"><div className="container" style={{textAlign: 'center', padding: '100px 0', color: 'var(--text-primary)'}}><h2>Loading products...</h2></div></main>;
+  }
+
   return (
-    <main className="shop-page">
+    <motion.main 
+      className="shop-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="container">
         <div className="shop-layout">
           <aside className="sidebar">
@@ -86,6 +98,6 @@ export default function Shop() {
           </div>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

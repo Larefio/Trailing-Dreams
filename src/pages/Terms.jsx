@@ -1,8 +1,15 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Terms() {
   return (
-    <main className="terms-page-premium">
+    <motion.main 
+      className="terms-page-premium"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="container">
         <div className="terms-header">
           <h1>Terms & Conditions</h1>
@@ -51,6 +58,6 @@ export default function Terms() {
           </section>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

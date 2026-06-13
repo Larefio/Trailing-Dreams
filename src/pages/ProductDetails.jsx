@@ -1,13 +1,17 @@
 import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { plants, getPlantById, categories } from '../data/plants-fixed';
+import { ProductContext } from '../context/ProductContext';
 import { CartContext } from '../context/CartContext';
 import { ArrowLeft, ShoppingBag, Sun, Droplet, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ProductDetails() {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
-  const plant = getPlantById(id);
+  const { products, loading } = useContext(ProductContext);
+  
+  if (loading) return null;
+  const plant = products.find(p => p.id.toString() === id.toString());
 
   if (!plant) {
     return (
@@ -19,7 +23,13 @@ export default function ProductDetails() {
   }
 
   return (
-    <main className="product-details-container">
+    <motion.main 
+      className="product-details-container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <Link to="/shop" className="back-to-shop-link">
         <ArrowLeft size={20} /> Back to Shop
       </Link>
@@ -60,6 +70,6 @@ export default function ProductDetails() {
           </button>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

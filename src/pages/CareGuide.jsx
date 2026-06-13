@@ -1,9 +1,16 @@
 import { careGuides } from '../data/careGuides';
 import CareSection from '../components/CareSection';
+import { motion } from 'framer-motion';
 
 export default function CareGuide() {
   return (
-    <main className="care-page-premium">
+    <motion.main 
+      className="care-page-premium"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <section className="care-hero">
         <h1>Care Guides</h1>
         <p>Learn how to keep your plants happy, healthy and full of life with our expert advice.</p>
@@ -13,6 +20,6 @@ export default function CareGuide() {
           <CareSection key={guide.id} guide={guide} reverse={i % 2 === 1} />
         ))}
       </section>
-    </main>
+    </motion.main>
   );
 }

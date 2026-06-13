@@ -1,9 +1,16 @@
 import { Leaf, Sparkles, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 const base = import.meta.env.BASE_URL;
 
 export default function About() {
   return (
-    <main className="about-page-premium">
+    <motion.main 
+      className="about-page-premium"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <section className="about-hero">
         <div className="container about-hero-container">
           <div className="about-hero-text">
@@ -43,6 +50,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }

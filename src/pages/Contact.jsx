@@ -1,9 +1,16 @@
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 const base = import.meta.env.BASE_URL;
 
 export default function Contact() {
   return (
-    <main className="contact-page-premium">
+    <motion.main 
+      className="contact-page-premium"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="contact-split-wrapper">
         <div className="contact-image-side">
           <img src={`${base}img/contact_desk.png`} alt="Contact Us Desk" className="contact-hero-img" />
@@ -71,6 +78,6 @@ export default function Contact() {
           </form>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

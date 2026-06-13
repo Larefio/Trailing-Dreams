@@ -1,13 +1,22 @@
+import { useContext } from 'react';
 import { Link } from "react-router-dom";
-import { plants, categories } from "../data/plants-fixed";
+import { categories } from "../data/plants-fixed";
+import { motion } from 'framer-motion';
+import { ProductContext } from '../context/ProductContext';
 
 export default function Home() {
+  const { products } = useContext(ProductContext);
   const base = import.meta.env.BASE_URL;
   // Categorías con conteo real (excluye "all")
   const displayCategories = categories.filter((c) => c.id !== "all");
 
   return (
-    <main>
+    <motion.main
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <section
         className="hero"
         style={{
@@ -20,7 +29,7 @@ export default function Home() {
           </h1>
           <p style={{ color: "#f0f0f0", fontWeight: "500", fontSize: "1.2rem", textShadow: "0 2px 8px rgba(0,0,0,0.4)", maxWidth: "600px", margin: "0 auto 30px" }}>
             We connect your home with nature. Specialists in unique species,
-            exotic plants, and tools for their daily care.
+            exotic products, and tools for their daily care.
           </p>
           <Link
             to="/shop"
@@ -120,6 +129,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }

@@ -2,13 +2,20 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Cart() {
   const { cart, updateQuantity, removeFromCart, getCartTotal } = useContext(CartContext);
 
   if (cart.length === 0) {
     return (
-      <main className="shop-page">
+      <motion.main 
+        className="shop-page"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+      >
         <div className="container">
           <div className="cart-header" style={{ marginBottom: '40px', textAlign: 'center' }}>
             <h1 style={{ color: 'var(--text-primary)' }}>Your Cart is Empty</h1>
@@ -18,7 +25,7 @@ export default function Cart() {
             </Link>
           </div>
         </div>
-      </main>
+      </motion.main>
     );
   }
 
@@ -27,7 +34,13 @@ export default function Cart() {
   const total = subtotal + shipping;
 
   return (
-    <main className="shop-page">
+    <motion.main 
+      className="shop-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="container">
         <div className="cart-header">
           <h1>Your Cart</h1>
@@ -92,13 +105,13 @@ export default function Cart() {
                 <span>${total.toFixed(2)}</span>
               </div>
               
-              <button id="checkout-btn" className="btn btn-primary btn-checkout">
+              <Link to="/checkout" id="checkout-btn" className="btn btn-primary btn-checkout" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                 Proceed to Checkout
-              </button>
+              </Link>
             </div>
           </aside>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
