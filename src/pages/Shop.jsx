@@ -48,7 +48,7 @@ export default function Shop() {
           <div className="main-content">
             <div className="search">
               <div style={{ position: 'relative' }}>
-                <Search size={18} style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent-terracotta)', pointerEvents: 'none' }} />
+                <Search size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent-terracotta)', pointerEvents: 'none' }} />
                 <input
                   type="text"
                   placeholder="Search cute plants & tools..."
