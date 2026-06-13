@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import { CartContext } from '../context/CartContext';
+import { categories } from '../data/plants-fixed';
 import { ArrowLeft, ShoppingBag, Sun, Droplet, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
