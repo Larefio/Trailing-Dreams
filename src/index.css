@@ -3347,7 +3347,13 @@ body, html {
 
 /* SHOP ENHANCEMENTS */
 .search-input {
-  padding-left: 60px !important;
+  padding-left: 50px !important;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding-left: 46px !important;
+  }
 }
 
 @media (max-width: 768px) {
