@@ -752,13 +752,13 @@ img {
 }
 
 .product-badge.new {
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
+  background-color: var(--accent-lilac);
+  color: #ffffff;
 }
 
 .product-badge.rare {
   background-color: var(--accent-olive);
-  color: var(--bg-primary);
+  color: #ffffff;
 }
 
 .product-badge.sale {
@@ -1677,12 +1677,12 @@ img {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .product-badge.new {
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
+  background-color: var(--accent-lilac);
+  color: #ffffff;
 }
 .product-badge.rare {
   background-color: var(--accent-olive);
-  color: var(--bg-primary);
+  color: #ffffff;
 }
 .product-badge.sale {
   background-color: var(--accent-terracotta);
@@ -3451,7 +3451,7 @@ body, html {
     gap: 15px !important;
     padding: 15px 25px !important;
     border-radius: 24px !important;
-    background: rgba(240, 248, 255, 0.8) !important;
+    background: var(--bg-card) !important;
     transition: all 0.3s ease !important;
     border: 1px solid rgba(163, 136, 238, 0.2) !important;
   }
@@ -3492,7 +3492,7 @@ body, html {
 
 /* BUG FIXES */
 .nav-menu-premium.open {
-  display: flex !important;
+  right: 0 !important;
 }
 
 @media (min-width: 768px) {
