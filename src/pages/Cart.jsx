@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-import { Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
+import { Trash2, Plus, Minus } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Cart() {

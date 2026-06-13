@@ -49,18 +49,24 @@ export default function ProductDetails() {
           </p>
 
           <div className="product-details-specs">
-            <div className="spec-item">
-              <Sun size={18} color="var(--accent-terracotta)" />
-              <span>{plant.light === 'direct' ? 'Direct sun' : plant.light === 'bright-indirect' ? 'Bright indirect light' : 'Medium/low light'}</span>
-            </div>
-            <div className="spec-item">
-              <Droplet size={18} color="var(--accent-terracotta)" />
-              <span>{plant.water === 'frequent' ? 'Frequent watering' : plant.water === 'weekly' ? 'Weekly watering' : 'Bi-weekly watering'}</span>
-            </div>
-            <div className="spec-item">
-              <Heart size={18} color={plant.petSafe ? 'var(--accent-terracotta)' : 'var(--text-secondary)'} />
-              <span>{plant.petSafe ? 'Pet-friendly' : 'Toxic to pets'}</span>
-            </div>
+            {plant.light !== 'n/a' && (
+              <div className="spec-item">
+                <Sun size={18} color="var(--accent-terracotta)" />
+                <span>{plant.light === 'direct' ? 'Direct sun' : plant.light === 'bright-indirect' ? 'Bright indirect light' : 'Medium/low light'}</span>
+              </div>
+            )}
+            {plant.water !== 'n/a' && (
+              <div className="spec-item">
+                <Droplet size={18} color="var(--accent-terracotta)" />
+                <span>{plant.water === 'frequent' ? 'Frequent watering' : plant.water === 'weekly' ? 'Weekly watering' : 'Bi-weekly watering'}</span>
+              </div>
+            )}
+            {plant.light !== 'n/a' && (
+              <div className="spec-item">
+                <Heart size={18} color={plant.petSafe ? 'var(--accent-terracotta)' : 'var(--text-secondary)'} />
+                <span>{plant.petSafe ? 'Pet-friendly' : 'Toxic to pets'}</span>
+              </div>
+            )}
           </div>
 
           <button 

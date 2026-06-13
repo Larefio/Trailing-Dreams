@@ -56,8 +56,12 @@ export function CartProvider({ children }) {
   };
   const getCartCount = () => cart.reduce((acc, item) => acc + item.quantity, 0);
   const getCartTotal = () => cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem('cart');
+  };
   return (
-    <CartContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist, getCartCount, getCartTotal }}>
+    <CartContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist, getCartCount, getCartTotal, clearCart }}>
       {children}
     </CartContext.Provider>
   );
