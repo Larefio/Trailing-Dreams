@@ -7,7 +7,6 @@ export function ProductProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Initialize products from LocalStorage or Fallback to default
   useEffect(() => {
     try {
       const storedProducts = localStorage.getItem('td_products');
@@ -25,7 +24,6 @@ export function ProductProvider({ children }) {
     }
   }, []);
 
-  // CRUD Operations for future Admin Panel
   const addProduct = (newProduct) => {
     const updated = [...products, { ...newProduct, id: Date.now() }];
     setProducts(updated);

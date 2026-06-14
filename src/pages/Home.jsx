@@ -7,7 +7,7 @@ import { ProductContext } from '../context/ProductContext';
 export default function Home() {
   const { products } = useContext(ProductContext);
   const base = import.meta.env.BASE_URL;
-  // Categorías con conteo real (excluye "all")
+  
   const displayCategories = categories.filter((c) => c.id !== "all");
 
   return (
@@ -79,7 +79,7 @@ export default function Home() {
                 height: "300px",
               }}
             >
-              {/* Imagen representativa de la categoría */}
+              
               <div
                 className="cat-bg"
                 style={{

@@ -30,14 +30,14 @@ export default function Checkout() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Auto-format card number with spaces
+    
     if (name === 'cardNumber') {
       const cleaned = value.replace(/\D/g, '').slice(0, 16);
       const formatted = cleaned.replace(/(.{4})/g, '$1 ').trim();
       setFormData(prev => ({ ...prev, cardNumber: formatted }));
       return;
     }
-    // Auto-format expiry
+    
     if (name === 'expiry') {
       const cleaned = value.replace(/\D/g, '').slice(0, 4);
       const formatted = cleaned.length > 2 ? `${cleaned.slice(0,2)}/${cleaned.slice(2)}` : cleaned;
@@ -84,7 +84,6 @@ export default function Checkout() {
     >
       <div className="checkout-wrapper">
 
-        {/* ─── LEFT PANEL ─── */}
         <div className="checkout-left">
           <div className="checkout-brand">
             <Leaf size={28} color="var(--accent-olive)" />
@@ -93,20 +92,19 @@ export default function Checkout() {
 
           {step < 3 && (
             <>
-              {/* Progress */}
+              
               <div className="checkout-steps">
                 <div className={`cs-step ${step >= 1 ? 'active' : ''}`}>
                   <div className="cs-dot"><Truck size={14} /></div>
-                  <span>Envío</span>
+                  <span>Shipping</span>
                 </div>
                 <div className="cs-line" />
                 <div className={`cs-step ${step >= 2 ? 'active' : ''}`}>
                   <div className="cs-dot"><CreditCard size={14} /></div>
-                  <span>Pago</span>
+                  <span>Payment</span>
                 </div>
               </div>
 
-              {/* Form */}
               <AnimatePresence mode="wait" custom={dir}>
                 {step === 1 && (
                   <motion.form
@@ -119,37 +117,37 @@ export default function Checkout() {
                     onSubmit={goNext}
                     className="checkout-form"
                   >
-                    <h2>Detalles de Envío</h2>
+                    <h2>Shipping Details</h2>
                     <div className="form-row-2">
                       <div className="checkout-field">
-                        <label>Nombre</label>
+                        <label>First Name</label>
                         <input name="firstName" placeholder="Ana" value={formData.firstName} onChange={handleChange} required />
                       </div>
                       <div className="checkout-field">
-                        <label>Apellido</label>
+                        <label>Last Name</label>
                         <input name="lastName" placeholder="García" value={formData.lastName} onChange={handleChange} required />
                       </div>
                     </div>
                     <div className="checkout-field">
-                      <label>Correo electrónico</label>
+                      <label>Email Address</label>
                       <input name="email" type="email" placeholder="ana@correo.com" value={formData.email} onChange={handleChange} required />
                     </div>
                     <div className="checkout-field">
-                      <label>Dirección</label>
+                      <label>Street Address</label>
                       <input name="address" placeholder="Calle Rosales 42" value={formData.address} onChange={handleChange} required />
                     </div>
                     <div className="form-row-2">
                       <div className="checkout-field">
-                        <label>Ciudad</label>
+                        <label>City</label>
                         <input name="city" placeholder="Lima" value={formData.city} onChange={handleChange} required />
                       </div>
                       <div className="checkout-field">
-                        <label>Código Postal</label>
+                        <label>Zip Code</label>
                         <input name="zip" placeholder="15001" value={formData.zip} onChange={handleChange} required maxLength="8" />
                       </div>
                     </div>
                     <button type="submit" className="checkout-btn-primary">
-                      Continuar al Pago <ChevronRight size={18} />
+                      Continue to Payment <ChevronRight size={18} />
                     </button>
                   </motion.form>
                 )}
@@ -165,12 +163,12 @@ export default function Checkout() {
                     onSubmit={handlePayment}
                     className="checkout-form"
                   >
-                    <h2>Datos de Pago</h2>
+                    <h2>Payment Details</h2>
                     <div className="checkout-secure-badge">
-                      <Lock size={14} /> Pago 100% seguro y simulado
+                      <Lock size={14} /> 100% Secure Payment
                     </div>
                     <div className="checkout-field">
-                      <label>Número de Tarjeta</label>
+                      <label>Card Number</label>
                       <div className="card-input-wrapper">
                         <input name="cardNumber" placeholder="0000 0000 0000 0000" value={formData.cardNumber} onChange={handleChange} required maxLength="19" />
                         <CreditCard size={20} className="card-icon" />
@@ -178,7 +176,7 @@ export default function Checkout() {
                     </div>
                     <div className="form-row-2">
                       <div className="checkout-field">
-                        <label>Vencimiento</label>
+                        <label>Expiry Date</label>
                         <input name="expiry" placeholder="MM/AA" value={formData.expiry} onChange={handleChange} required maxLength="5" />
                       </div>
                       <div className="checkout-field">
@@ -188,13 +186,13 @@ export default function Checkout() {
                     </div>
                     <div className="checkout-actions">
                       <button type="button" onClick={goPrev} className="checkout-btn-secondary">
-                        <ChevronLeft size={18} /> Volver
+                        <ChevronLeft size={18} /> Back
                       </button>
                       <button type="submit" className="checkout-btn-primary" disabled={isProcessing}>
                         {isProcessing ? (
-                          <span className="processing-dots">Procesando<span>.</span><span>.</span><span>.</span></span>
+                          <span className="processing-dots">Processing<span>.</span><span>.</span><span>.</span></span>
                         ) : (
-                          <><Lock size={16} /> Pagar ${total.toFixed(2)}</>
+                          <><Lock size={16} /> Pay \${total.toFixed(2)}</>
                         )}
                       </button>
                     </div>
@@ -214,21 +212,20 @@ export default function Checkout() {
               <div className="success-icon">
                 <CheckCircle size={64} />
               </div>
-              <h2>¡Pedido Confirmado!</h2>
-              <p>Gracias, <strong>{formData.firstName}</strong>. Tu pedido será enviado a <strong>{formData.city}</strong> pronto. Te notificaremos a <strong>{formData.email}</strong>.</p>
-              <div className="success-order-num">Pedido #{Math.floor(Math.random() * 90000) + 10000}</div>
+              <h2>Order Confirmed!</h2>
+              <p>Thank you, <strong>{formData.firstName}</strong>. Your order will be shipped to <strong>{formData.city}</strong> soon. We will notify you at <strong>{formData.email}</strong>.</p>
+              <div className="success-order-num">Order #{Math.floor(Math.random() * 90000) + 10000}</div>
               <Link to="/shop" className="checkout-btn-primary" style={{ textDecoration: 'none', display: 'inline-flex' }}>
-                <ShoppingBag size={18} /> Seguir Comprando
+                <ShoppingBag size={18} /> Continue Shopping
               </Link>
             </motion.div>
           )}
         </div>
 
-        {/* ─── RIGHT PANEL: Order Summary ─── */}
         {step < 3 && (
           <div className="checkout-right">
             <div className="checkout-summary-panel">
-              <h3>Resumen del Pedido</h3>
+              <h3>Order Summary</h3>
               <div className="checkout-items-list">
                 {cart.map(item => (
                   <div key={item.id} className="checkout-summary-item">
@@ -247,7 +244,7 @@ export default function Checkout() {
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="checkout-summary-row">
-                <span>Envío</span>
+                <span>Shipping</span>
                 <span>${shipping.toFixed(2)}</span>
               </div>
               <div className="checkout-summary-row checkout-total-row">

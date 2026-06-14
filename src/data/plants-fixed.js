@@ -1,4 +1,4 @@
-// src/data/plants-fixed.js
+
 const base = import.meta.env.BASE_URL;
 
 function getSpecs(category) {
@@ -23,7 +23,7 @@ function getBadge(index, price) {
 }
 
 const rawPlants = [
-  // INDOOR
+  
   { id: 'monstera-deliciosa', title: 'Monstera Deliciosa', price: 24, category: 'indoor', imgFile: 'monstera.jpg', description: 'The Monstera Deliciosa is an iconic indoor plant with characteristic perforated leaves. Easy to care for and fast growing.' },
   { id: 'sansevieria-trifasciata', title: 'Snake Plant', price: 25, category: 'indoor', imgFile: 'sansevieria.jpg', description: 'The Snake Plant purifies the air and survives in extreme conditions. Ideal for beginners.' },
   { id: 'hoya-carnosa', title: 'Wax Plant', price: 31, category: 'indoor', imgFile: 'hoya-carnosa.jpg', description: 'The Wax Plant produces fragrant star-shaped flowers. Slow-growing climber.' },
@@ -34,14 +34,12 @@ const rawPlants = [
   { id: 'nephrolepis-exaltata', title: 'Boston Fern', price: 22, category: 'indoor', imgFile: 'Helecho-Boston.jpg', description: 'The classic fern with arching, feathery fronds. Excellent air purifier.' },
   { id: 'bonsai', title: 'Bonsai', price: 65, category: 'indoor', imgFile: 'bonzais.jpg', description: 'A miniature tree cultivated with ancient techniques. Ideal for contemplation and detailed care.' },
 
-  // SUCCULENTS
   { id: 'fockea-edulis', title: 'Fockea Edulis', price: 45, category: 'succulents', imgFile: 'Fockea.jpg', description: 'An unusual caudiciform succulent with a thick, swollen base that stores water.' },
   { id: 'aloe-aristata', title: 'Aloe Aristata', price: 18, category: 'succulents', imgFile: 'Aloe-aristata.jpg', description: 'Compact rosettes of dark green leaves with white bumps. Easy maintenance.' },
   { id: 'haworthia-fasciata', title: 'Zebra Plant', price: 44, category: 'succulents', imgFile: 'Haworthia.jpg', description: 'The Zebra Plant has white horizontal stripes and tolerates shade better than other succulents.' },
   { id: 'euphorbia-tirucalli', title: 'Pencil Cactus', price: 31, category: 'succulents', imgFile: 'Euphorbia-tirucalli.jpg', description: 'The Pencil Cactus grows in branching cylindrical stems and lacks obvious leaves.' },
   { id: 'sedum-morganianum', title: 'Burro\'s Tail', price: 37, category: 'succulents', imgFile: 'Sedum.jpg', description: 'The Burro\'s Tail has fleshy trailing leaves. Handle with care so they don\'t fall off.' },
 
-  // TROPICAL
   { id: 'maranta-leuconeura', title: 'Prayer Plant', price: 21, category: 'tropical', imgFile: 'maranta-lima-naranja.jpg', description: 'The Prayer Plant folds its leaves at night. Shows unique patterns on the foliage.' },
   { id: 'magnolia-jane', title: 'Perfect Plants Jane Magnolia 1 Gallon', price: 24.99, category: 'tropical', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Magnolia_sieboldii_flower_1.jpg/500px-Magnolia_sieboldii_flower_1.jpg', description: 'Beautiful Jane Magnolia with stunning blooms. Perfect for adding a splash of color to your garden.' },
   { id: 'syngonium-rosa', title: 'Pink Syngonium', price: 32, category: 'tropical', imgFile: 'syngonium-rosa.jpg', description: 'Beautiful Arrowhead variety with pink hues on its leaves.' },
@@ -50,11 +48,9 @@ const rawPlants = [
   { id: 'tillandsia', title: 'Air Plant', price: 18, category: 'tropical', imgFile: 'Tillandsia.jpg', description: 'Air plant that needs no soil. Absorbs nutrients through its leaves.' },
   { id: 'monstera-borsigiana', title: 'Monstera Borsigiana', price: 45, category: 'tropical', imgFile: 'Monstera-Borsigiana.jpg', description: 'Faster climbing and more compact variant than the traditional deliciosa, ideal for moss poles.' },
 
-  // CARNIVOROUS
   { id: 'darlingtonia-californica', title: 'Cobra Lily', price: 55, category: 'carnivorous', imgFile: 'Darlingtonia.jpg', description: 'The Cobra Plant has traps reminiscent of a snake about to strike. Unique in its genus.' },
   { id: 'nepenthes-rajah', title: 'Nepenthes Rajah', price: 85, category: 'carnivorous', imgFile: 'Nepenthes-Rajah.jpg', description: 'Known for having the largest pitcher traps in the world. A fascinating species.' },
 
-  // TOOLS & CARE
   { id: 'jard-1', title: 'BEST MILEGA Potting Fertilizers Vermicompost', price: 12.99, category: 'jardineria', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Lombri-compostage.JPG/500px-Lombri-compostage.JPG', description: 'High quality organic vermicompost potting fertilizer for lush, healthy plant growth.' },
   { id: 'jard-2', title: 'Ugaoo Organic Potting Garden Soil Mix 5Kg', price: 14.99, category: 'jardineria', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Potting_soil.jpg/500px-Potting_soil.jpg', description: 'Ready-to-use organic blend with nutrient-rich red soil and cow manure. Perfect for indoor and outdoor plants.' },
   { id: 'jard-3', title: 'Expert Gardener Bone Meal Plant Food 3-15-0, 4 lb', price: 7.98, category: 'jardineria', imgFile: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/%D0%93%D0%BE%D1%80%D1%81%D1%82%D1%8C_%D0%BA%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D1%83%D0%BA%D0%B8_2014-05-07_13-57.jpg/500px-%D0%93%D0%BE%D1%80%D1%81%D1%82%D1%8C_%D0%BA%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D0%B9_%D0%BC%D1%83%D0%BA%D0%B8_2014-05-07_13-57.jpg', description: 'Expert Gardener Bone Meal is an excellent source of phosphorus and calcium. Great for bulbs and root development.' },
