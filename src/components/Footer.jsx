@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <Phone size={16} className="contact-icon" />
-                <span>+51 999 999 999</span>
+                <span>+1 (903) 555-0199</span>
               </li>
               <li>
                 <Mail size={16} className="contact-icon" />

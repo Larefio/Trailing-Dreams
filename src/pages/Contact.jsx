@@ -30,7 +30,7 @@ export default function Contact() {
                 <span className="info-icon"><MessageCircle size={24} color="var(--accent-terracotta)" /></span>
                 <div className="info-text">
                   <strong>WhatsApp</strong>
-                  <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">+51 999 999 999</a>
+                  <a href="https://wa.me/19035550199" target="_blank" rel="noopener noreferrer">+1 (903) 555-0199</a>
                 </div>
               </div>
               <div className="contact-info-row">

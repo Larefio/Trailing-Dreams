@@ -4,7 +4,7 @@ Bienvenido a **Trailing Dreams**, una aplicación de comercio electrónico (SPA)
 
 Este proyecto fue diseñado con un fuerte enfoque en la Experiencia de Usuario (UX) y una arquitectura moderna de desarrollo Frontend.
 
-![Trailing Dreams Preview](./public/img/preview.png)
+![Trailing Dreams Preview](./public/img/trailing-dreams.jpeg)
 
 ---
 
